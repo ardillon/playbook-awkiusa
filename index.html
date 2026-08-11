@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook Comercial · AWKI USA</title>
+<style>
+:root{
+  --ink:#1B1611;
+  --cream:#F6EFE3;
+  --paper:#FFFDF9;
+  --cacao:#7A3E1D;
+  --cacao-light:#B5651D;
+  --gold:#C9A66B;
+  --gray:#6E655A;
+  --line:#E4D9C4;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  font-size:16px;
+}
+h1,h2,h3,h4{
+  font-family:Georgia, "Times New Roman", serif;
+  font-weight:700;
+  letter-spacing:.2px;
+  margin:0;
+}
+p{margin:0 0 14px 0;}
+a{color:var(--cacao);}
+
+/* ---------- Cover ---------- */
+.cover{
+  background:var(--ink);
+  color:var(--cream);
+  padding:64px 8vw 56px;
+  position:relative;
+  text-align:center;
+}
+.cover .logo{height:78px;margin-bottom:36px;display:inline-block;filter:invert(1);}
+.cover .tag{
+  color:var(--gold);
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.cover h1{font-size:clamp(32px,5vw,50px);color:var(--paper);line-height:1.1;margin-bottom:18px;}
+.cover .subtitle{font-size:18px;color:var(--line);max-width:680px;margin:0 auto 28px;}
+.cover .meta{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:28px;
+  border-top:1px solid #3a332b;padding-top:22px;margin-top:10px;
+  font-size:13px;color:var(--line);
+}
+.cover .meta strong{color:var(--paper);display:block;font-family:Georgia,serif;font-weight:700;font-size:14px;margin-bottom:2px;}
+.print-btn{
+  position:fixed;top:18px;right:18px;z-index:50;
+  background:var(--cacao);color:var(--paper);
+  border:none;border-radius:4px;
+  padding:10px 18px;font-family:Georgia,serif;font-weight:700;font-size:13px;
+  letter-spacing:.5px;text-transform:uppercase;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.print-btn:hover{background:var(--cacao-light);}
+
+/* ---------- Index ---------- */
+.index-wrap{background:var(--cream);padding:36px 8vw 44px;}
+.index-wrap h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cacao);margin-bottom:18px;font-family:Georgia,serif;}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;}
+.index-grid a{
+  display:flex;align-items:baseline;gap:10px;
+  text-decoration:none;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line);border-radius:4px;
+  padding:12px 14px;font-size:14px;transition:.15s;
+}
+.index-grid a:hover{border-color:var(--cacao);}
+.index-grid .n{font-family:Georgia,serif;font-weight:700;color:var(--cacao);font-size:13px;}
+
+/* ---------- Sections ---------- */
+section{padding:54px 8vw;border-bottom:1px solid var(--line);scroll-margin-top:20px;}
+section.alt{background:var(--cream);}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px;}
+.sec-head .num{
+  font-family:Georgia,serif;font-weight:700;color:var(--cacao);
+  font-size:15px;border:1.5px solid var(--cacao);
+  border-radius:50%;width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center;flex:none;
+}
+.sec-head h2{font-size:26px;}
+
+h3.sub{font-family:Georgia,serif;font-weight:700;font-size:16px;color:var(--cacao);margin:26px 0 10px;}
+h4.sub2{font-family:Georgia,serif;font-weight:700;font-size:14.5px;color:var(--ink);margin:18px 0 8px;}
+
+table{width:100%;border-collapse:collapse;margin:16px 0 22px;font-size:14.5px;}
+thead th{
+  background:var(--ink);color:var(--cream);
+  font-family:Georgia,serif;font-weight:700;font-size:13px;
+  text-align:left;padding:10px 12px;letter-spacing:.2px;
+}
+tbody td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+tbody tr:nth-child(even){background:rgba(122,62,29,.05);}
+.alt table thead th{background:var(--cacao);}
+
+ul,ol{margin:0 0 16px 0;padding-left:22px;}
+li{margin-bottom:6px;}
+
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:6px;
+  padding:18px 20px;margin-bottom:16px;
+}
+.alt .card{background:var(--paper);border-color:var(--line);}
+.card .label{
+  font-family:Georgia,serif;font-weight:700;color:var(--cacao);
+  font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:block;
+}
+.email-tpl{
+  border-left:3px solid var(--cacao);
+  padding:10px 16px;margin:10px 0 18px;background:rgba(122,62,29,.05);
+  border-radius:0 4px 4px 0;
+}
+.email-tpl .step{font-family:Georgia,serif;font-weight:700;font-size:13px;color:var(--ink);margin-bottom:4px;}
+.email-tpl .subj{font-weight:600;font-size:14px;margin-bottom:4px;}
+.email-tpl .body{font-size:14px;color:#3a332b;font-style:italic;}
+
+.qa{margin-bottom:18px;}
+.qa .q{font-family:Georgia,serif;font-weight:700;font-size:15px;margin-bottom:4px;}
+.qa .a{font-size:14.5px;color:#2a241d;}
+
+.note{
+  font-size:13px;color:var(--gray);border-top:1px dashed var(--line);
+  padding-top:10px;margin-top:6px;
+}
+.pill{
+  display:inline-block;background:var(--ink);color:var(--cream);
+  font-family:Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.5px;
+  text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-right:6px;
+}
+.pill.cacao{background:var(--cacao);}
+.glossary dt{font-family:Georgia,serif;font-weight:700;font-size:14.5px;margin-top:14px;color:var(--ink);}
+.glossary dd{margin:2px 0 0 0;font-size:14px;color:#333;}
+.formula{font-family:monospace;background:var(--ink);color:var(--gold);padding:8px 12px;border-radius:4px;display:inline-block;margin:4px 0 14px;font-size:13.5px;}
+
+footer{
+  background:var(--ink);color:var(--line);
+  padding:40px 8vw;font-size:13px;text-align:center;
+}
+footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
+
+@media print{
+  .print-btn{display:none;}
+  section{page-break-inside:avoid;padding:24px 6vw;}
+  .cover{padding:30px 6vw;}
+}
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Imprimir / PDF</button>
+
+<div class="cover">
+  <img class="logo" src="data:image/png;base64,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" alt="AWKI">
+  <div class="tag">Estrategia Comercial · RevOps</div>
+  <h1>Playbook Comercial<br>AWKI USA</h1>
+  <p class="subtitle">Sistema comercial de ventas y expansión de cuentas (wholesale B2B) sobre HubSpot Sales Starter — cacao ecuatoriano premium, validación de mercado en Los Ángeles, California.</p>
+  <div class="meta">
+    <div><strong>Alcance</strong>Ventas + Expansión de Cuentas, dos pipelines en HubSpot</div>
+    <div><strong>Mercado inicial</strong>Los Ángeles, California</div>
+    <div><strong>Referencia</strong>QT-000039</div>
+    <div><strong>Duración de implementación</strong>3 semanas</div>
+  </div>
+</div>
+
+<div class="index-wrap">
+  <h2>Índice</h2>
+  <div class="index-grid">
+    <a href="#s01"><span class="n">01</span> Modelo de Negocio</a>
+    <a href="#s02"><span class="n">02</span> Cliente Ideal (ICP)</a>
+    <a href="#s03"><span class="n">03</span> Proceso Comercial</a>
+    <a href="#s04"><span class="n">04</span> Secuencias de Prospección</a>
+    <a href="#s05"><span class="n">05</span> Reunión y Modalidades de Pedido</a>
+    <a href="#s06"><span class="n">06</span> Objeciones Frecuentes</a>
+    <a href="#s07"><span class="n">07</span> HubSpot</a>
+    <a href="#s08"><span class="n">08</span> KPIs Comerciales</a>
+    <a href="#s09"><span class="n">09</span> Roles y Cadencias</a>
+    <a href="#s10"><span class="n">10</span> Glosario</a>
+  </div>
+</div>
+
+<!-- 01 -->
+<section id="s01">
+  <div class="sec-head"><span class="num">01</span><h2>Modelo de Negocio</h2></div>
+
+  <h3 class="sub">Qué vendemos</h3>
+  <p>AWKI ofrece experiencias de cacao ecuatoriano premium que combinan origen, sabor, propósito y bienestar. El portafolio va más allá del chocolate tradicional: productos pensados para ritual, regalo, experiencia de bienestar y consumo premium, con presentación y branding adaptados al mercado estadounidense.</p>
+
+  <h3 class="sub">A quién se lo vendemos</h3>
+  <p>Empresas y organizaciones que pueden revender, integrar o regalar el producto — retail especializado, espacios de bienestar, hospitality boutique, agencias de regalos corporativos y, como oportunidad futura, aerolíneas premium. No se vende B2C de forma sistemática fuera de ferias y farmer markets.</p>
+
+  <h3 class="sub">Diferenciador comercial</h3>
+  <p>Origen ecuatoriano auténtico y verificable, con una historia de propósito y bienestar que ningún chocolate de commodity puede igualar. AWKI no compite por precio de anaquel: compite por experiencia, narrativa y presentación premium.</p>
+
+  <h3 class="sub">Respaldo</h3>
+  <p>Marca lanzada en 2025, con ventas 2026 de aproximadamente <strong>USD 9,000</strong>, de las cuales <strong>USD 6,000</strong> provienen de ferias comerciales — validación temprana de aceptación de producto que ahora se sistematiza en un proceso comercial repetible y medible, con meta de <strong>~110 unidades mensuales</strong>.</p>
+</section>
+
+<!-- 02 -->
+<section id="s02" class="alt">
+  <div class="sec-head"><span class="num">02</span><h2>Cliente Ideal (ICP)</h2></div>
+  <p>AWKI no persigue cualquier cuenta: prioriza segmentos donde el producto tiene aplicación clara y el decisor es identificable. Cuentas sin fit de segmento, sin canal de contacto o sin decisor visible no avanzan a prospección activa.</p>
+
+  <h3 class="sub">Tabla 1 — Segmentación ICP</h3>
+  <table>
+    <thead><tr><th>Segmento</th><th>Sector</th><th>Decisores clave</th><th>Propuesta de valor</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Primario</strong></td><td>Retail especializado (natural, gourmet, wellness retail)</td><td>Founder, Buyer, Store Manager</td><td>Portafolio premium y diferenciador más allá del chocolate tradicional</td></tr>
+      <tr><td><strong>Secundario</strong></td><td>Wellness (estudios de yoga, meditación, retiros, spas)</td><td>Studio Owner, Program Director</td><td>Producto para experiencias de conexión, ritual, retiros y talleres</td></tr>
+      <tr><td><strong>Terciario</strong></td><td>Hospitality boutique (cafés especializados, restaurantes premium, lodges)</td><td>GM, F&amp;B Director</td><td>Amenidad, regalo, producto de tienda o experiencia diferenciadora para el huésped</td></tr>
+      <tr><td><strong>Oportunidad 1</strong></td><td>Corporate gifting</td><td>Event Planner, HR Manager</td><td>Regalos con historia, propósito y presentación premium</td></tr>
+      <tr><td><strong>Oportunidad 2</strong></td><td>Aerolíneas premium (hub LAX)</td><td>Procurement Manager</td><td>Amenidad de cabina premium con narrativa de origen</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Tabla 2 — Criterios de calificación (máximo 80 puntos)</h3>
+  <table>
+    <thead><tr><th>Criterio</th><th>Puntos</th></tr></thead>
+    <tbody>
+      <tr><td>Segmento prioritario</td><td>20</td></tr>
+      <tr><td>Mercado prioritario (Los Ángeles)</td><td>10</td></tr>
+      <tr><td>Productos premium en su oferta actual</td><td>10</td></tr>
+      <tr><td>Tienda física o comunidad activa</td><td>10</td></tr>
+      <tr><td>Aplicación clara para AWKI</td><td>15</td></tr>
+      <tr><td>Decisor identificado</td><td>15</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Tabla 3 — Clasificación final</h3>
+  <table>
+    <thead><tr><th>Clase</th><th>Significado</th><th>Acción</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill cacao">A</span></td><td>Fit alto + intención confirmada</td><td>Prioridad de contacto y seguimiento, escalar a reunión rápido</td></tr>
+      <tr><td><span class="pill">B</span></td><td>Fit alto, intención baja</td><td>Nutrir con contenido de marca y reintentar en ciclos posteriores</td></tr>
+      <tr><td><span class="pill">C</span></td><td>Fit medio o información incompleta</td><td>Completar datos antes de invertir tiempo comercial; no escalar aún</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Tabla 4 — Campos mínimos para pasar de MQL (Apollo) a SQL (pipeline Ventas)</h3>
+  <table>
+    <thead><tr><th>Campo</th><th>Fuente</th></tr></thead>
+    <tbody>
+      <tr><td>Segmento / Subsegmento</td><td>Validado por comercial o capturado en Apollo</td></tr>
+      <tr><td>Mercado</td><td>Los Ángeles (fase inicial)</td></tr>
+      <tr><td>Canal de origen</td><td>Apollo, Feria, Farmer Market, Inbound</td></tr>
+      <tr><td>Prioridad / Fit (A/B/C)</td><td>Calculado con la tabla de criterios</td></tr>
+      <tr><td>Decisor identificado</td><td>Nombre y cargo del contacto</td></tr>
+    </tbody>
+  </table>
+  <p class="note">La identificación, validación y calificación a MQL ocurren en Apollo, fuera de HubSpot. Solo cuando un comercial confirma el fit y el decisor, el MQL se convierte en SQL y recién ahí se crea el negocio en el pipeline de Ventas. El volumen de contactos en Apollo por sí solo no es señal suficiente.</p>
+</section>
+
+<!-- 03 -->
+<section id="s03">
+  <div class="sec-head"><span class="num">03</span><h2>Proceso Comercial</h2></div>
+  <p>AWKI opera dos pipelines separados en HubSpot: <strong>Ventas</strong> (cierre del primer pedido) y <strong>Expansión de Cuentas</strong> (reventa, upselling y cross-selling sobre cuentas ya cerradas). No se mezclan: una cuenta pasa de Ventas a Expansión de Cuentas únicamente tras confirmar su primer pedido.</p>
+
+  <h3 class="sub">De dónde entra el prospecto (4 canales)</h3>
+  <ul>
+    <li><strong>Apollo (outbound):</strong> prospección dirigida por segmento y mercado.</li>
+    <li><strong>Ferias:</strong> venta directa y captura de leads en el momento.</li>
+    <li><strong>Farmer Markets:</strong> validación de oferta y detección de retailers interesados.</li>
+    <li><strong>Inbound:</strong> solicitudes espontáneas, formularios y referidos.</li>
+  </ul>
+
+  <h3 class="sub">Fase 0 — Identificación, Validación y MQL (en Apollo, fuera de HubSpot)</h3>
+  <p>Toda cuenta nueva pasa por identificación (multicanal) y validación (segmento, contacto, afinidad) antes de calificarse como MQL. Este trabajo ocurre en Apollo: ahí se construyen las listas, se aplica el scoring ICP y se determina qué contactos son Marketing Qualified Leads. Registro en Apollo no equivale automáticamente a cuenta calificada, y un MQL todavía no es un negocio en HubSpot.</p>
+
+  <h3 class="sub">Fase 1 — Calificación a SQL y entrada a HubSpot</h3>
+  <p>Al pipeline de <strong>Ventas</strong> solo entra el contacto ya calificado para ventas (SQL): un comercial revisa el MQL de Apollo, confirma fit, aplicación y decisor, y recién en ese momento se crea el negocio. Ningún MQL se convierte en negocio de forma automática.</p>
+
+  <h3 class="sub">Fase 2 — Pipeline "Ventas" (7 etapas)</h3>
+  <table>
+    <thead><tr><th>Etapa</th><th>Probabilidad</th><th>Condición de avance</th></tr></thead>
+    <tbody>
+      <tr><td>SQL asignado</td><td>15%</td><td>MQL de Apollo confirmado como SQL y asignado a comercial</td></tr>
+      <tr><td>Contacto y respuesta</td><td>25%</td><td>Primer contacto registrado y respuesta positiva obtenida</td></tr>
+      <tr><td>Reunión realizada</td><td>45%</td><td>Conversación completada, fit y BANT adaptado confirmados</td></tr>
+      <tr><td>Starter order propuesto</td><td>65%</td><td>Selección de producto enviada</td></tr>
+      <tr><td>Negociación</td><td>80%</td><td>Condiciones en revisión</td></tr>
+      <tr><td>Pedido confirmado</td><td>100%</td><td>Orden verificada</td></tr>
+      <tr><td>Perdido</td><td>0%</td><td>Razón de pérdida registrada</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Pipeline "Expansión de Cuentas" (7 etapas)</h3>
+  <p>Se activa exclusivamente para cuentas con primer pedido confirmado. Agrupa reventa (reposición), upselling (mayor volumen o línea premium) y cross-selling (nuevos productos), y se gestiona por separado del pipeline de Ventas para no distorsionar el funnel de nuevos clientes.</p>
+  <table>
+    <thead><tr><th>Etapa</th><th>Probabilidad</th><th>Condición de avance</th></tr></thead>
+    <tbody>
+      <tr><td>Cuenta activa</td><td>15%</td><td>Primer pedido confirmado, cuenta pasa de Ventas a Expansión de Cuentas</td></tr>
+      <tr><td>Recompra programada y contactada</td><td>30%</td><td>Fecha de reposición calculada y seguimiento ejecutado</td></tr>
+      <tr><td>Oportunidad de expansión confirmada</td><td>45%</td><td>Upsell o cross-sell detectado; cliente confirma intención de reponer o ampliar</td></tr>
+      <tr><td>Propuesta de expansión enviada</td><td>60%</td><td>Reposición, upsell o cross-sell cotizado</td></tr>
+      <tr><td>Negociación</td><td>80%</td><td>Condiciones en revisión</td></tr>
+      <tr><td>Pedido confirmado</td><td>100%</td><td>Reposición, upsell o cross-sell cerrado</td></tr>
+      <tr><td>Perdida / Cuenta inactiva</td><td>0%</td><td>Sin recompra en el ciclo esperado, razón registrada</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card"><span class="label">Principio rector</span>Ninguna oportunidad entra al pipeline de Ventas sin ser SQL confirmado — el registro en Apollo (MQL) no equivale automáticamente a negocio en HubSpot. Y ninguna oportunidad avanza sin canal de origen registrado y sin próximo paso con responsable, fecha y actividad definida.</div>
+</section>
+
+<!-- 04 -->
+<section id="s04" class="alt">
+  <div class="sec-head"><span class="num">04</span><h2>Secuencias de Prospección</h2></div>
+  <p>Secuencias completas por segmento ICP, en dos canales diferenciados: <strong>email</strong> (4 touches, Día 0 a Día 14) y <strong>SMS / WhatsApp</strong> (3 touches, Día 1 a Día 10), corriendo en paralelo y sin pisarse. Ambas corren en Apollo/outbound durante la etapa de MQL, antes de que el contacto se confirme como SQL y entre al pipeline de Ventas.</p>
+  <p class="note">SMS/WhatsApp solo se activa sobre contactos con número válido y consentimiento comercial registrado (propiedad de Contacto). Es un canal de refuerzo, más breve y directo que el email — nunca reemplaza la explicación completa de la propuesta de valor.</p>
+
+  <!-- RETAIL -->
+  <h3 class="sub">Retail especializado (ICP Primario)</h3>
+
+  <h4 class="sub2">Secuencia de Email</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Un cacao ecuatoriano que va más allá del chocolate tradicional</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, una marca de cacao ecuatoriano premium que llegó a Estados Unidos en 2025. Vi que {{empresa}} tiene una selección cuidada de productos gourmet/naturales, y creo que nuestro cacao podría complementarla bien: origen ecuatoriano auténtico, presentación premium y una historia de propósito y bienestar que va más allá del chocolate tradicional. ¿Tendría sentido enviarles una muestra o coordinar una llamada breve de 15 minutos para mostrarle el portafolio? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Un cacao ecuatoriano que va más allá del chocolate tradicional</div><div class="body">Hola {{nombre}}, le escribo de nuevo por si el correo anterior se perdió entre tantos pendientes. Puedo enviarle una muestra física de nuestro cacao sin compromiso, junto con la ficha de producto y precios de wholesale, para que usted decida si tiene fit con {{empresa}}. ¿Le sirve que se la envíe esta semana? Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Una pregunta rápida sobre {{empresa}}</div><div class="body">Hola {{nombre}}, sé que su tiempo es limitado, así que seré breve: ¿{{empresa}} está evaluando ampliar su categoría de chocolate/cacao premium este trimestre? Si la respuesta es sí, me encantaría mostrarle cómo trabajamos con tiendas similares. Si no es el momento, lo entiendo y no quiero insistir más de lo necesario. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Cierro este contacto por ahora</div><div class="body">Hola {{nombre}}, no he tenido noticias suyas, así que voy a pausar el seguimiento por ahora para no ser inoportuno. Si en algún momento quiere conocer el portafolio de AWKI, aquí estaré. Le deseo mucho éxito con {{empresa}}. Saludos, {{remitente}}.</div></div>
+
+  <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI (cacao ecuatoriano premium). Le escribí un correo sobre un producto que podría complementar la selección de {{empresa}}. ¿Le parece si coordinamos 15 min esta semana?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿pudo ver el correo sobre AWKI? Puedo enviarle una muestra sin compromiso para que la prueben en {{empresa}}. Avíseme si le interesa.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, última nota de mi parte: si en el futuro quiere explorar cacao ecuatoriano premium para {{empresa}}, escríbame cuando le convenga. ¡Éxitos!</div></div>
+
+  <!-- WELLNESS -->
+  <h3 class="sub">Wellness (ICP Secundario)</h3>
+
+  <h4 class="sub2">Secuencia de Email</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Cacao premium para experiencias de bienestar en {{empresa}}</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium pensado para experiencias de bienestar: ceremonias, retiros y talleres. Vi el trabajo que hacen en {{empresa}} y creo que nuestro cacao podría integrarse bien a sus espacios — como parte de una ceremonia, un obsequio para participantes o un producto de tienda. ¿Le interesaría que le cuente más o le envíe una muestra para su próximo evento? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Cacao premium para experiencias de bienestar en {{empresa}}</div><div class="body">Hola {{nombre}}, quería dejarle una idea concreta: podemos armar un kit de prueba para un próximo taller o retiro en {{empresa}}, sin costo, para que usted y su comunidad lo experimenten directamente. ¿Tiene algún evento próximo donde esto tendría sentido? Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Cacao con propósito para su próximo retiro</div><div class="body">Hola {{nombre}}, sé que la agenda de un espacio de bienestar es intensa, así que seré directo: si tiene un retiro, taller o ceremonia en las próximas semanas, con gusto le envío una muestra de cacao AWKI para esa ocasión. Avíseme si tiene sentido y coordinamos. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Dejo la puerta abierta</div><div class="body">Hola {{nombre}}, no quiero saturar su bandeja, así que pauso el seguimiento por ahora. Cuando tengan un evento donde el cacao ceremonial tenga sentido, aquí estaré. Le deseo mucha luz en su trabajo con {{empresa}}. Saludos, {{remitente}}.</div></div>
+
+  <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium para ceremonias y retiros. Le escribí un correo — ¿tienen algún evento próximo en {{empresa}} donde podamos colaborar?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿alcanzó a ver mi mensaje sobre AWKI? Puedo mandarle una muestra para su próximo taller o retiro, sin costo. Cuénteme si le interesa.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedo disponible para cuando tengan un evento donde el cacao ceremonial tenga sentido. ¡Mucho éxito con lo que hacen en {{empresa}}!</div></div>
+
+  <!-- HOSPITALITY -->
+  <h3 class="sub">Hospitality boutique (ICP Terciario)</h3>
+
+  <h4 class="sub2">Secuencia de Email</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Una amenidad con historia para los huéspedes de {{empresa}}</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium. Creo que podríamos enriquecer la experiencia del huésped en {{empresa}}: como amenidad de habitación, detalle de bienvenida o producto disponible en su tienda/gift shop, con una historia de origen que distingue la experiencia. ¿Le interesaría ver el portafolio y precios para hospitality? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Una amenidad con historia para los huéspedes de {{empresa}}</div><div class="body">Hola {{nombre}}, le comparto un poco más de contexto: trabajamos formatos pequeños ideales para amenities y presentaciones más grandes para gift shop o eventos. Puedo enviarle una muestra física para que la evalúen en {{empresa}}. ¿Le sirve esta semana? Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Pensando en la temporada alta de {{empresa}}</div><div class="body">Hola {{nombre}}, con la temporada alta acercándose, pensé que podría ser un buen momento para incorporar un detalle diferenciador en la experiencia del huésped. Si tiene sentido, puedo enviarle una propuesta simple con opciones y precios, sin compromiso. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Quedo disponible</div><div class="body">Hola {{nombre}}, no he sabido de usted, así que pauso el seguimiento por ahora. Si en algún momento {{empresa}} quiere explorar una amenidad o producto con historia de origen, aquí estaré. Saludos, {{remitente}}.</div></div>
+
+  <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI. Le escribí sobre una amenidad de cacao ecuatoriano premium para los huéspedes de {{empresa}}. ¿Podemos coordinar una llamada breve?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿pudo revisar la propuesta de AWKI para {{empresa}}? Puedo enviarle una muestra física esta semana si le interesa.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedo atento para cuando quieran explorar un detalle diferenciador para sus huéspedes. ¡Éxitos con {{empresa}}!</div></div>
+
+  <!-- CORPORATE GIFTING -->
+  <h3 class="sub">Corporate gifting (Oportunidad 1)</h3>
+
+  <h4 class="sub2">Secuencia de Email</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Regalos corporativos con historia y propósito</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium. Para regalos corporativos, ofrecemos algo distinto a lo tradicional: origen ecuatoriano auténtico, presentación refinada y una narrativa que distingue a quien regala — ideal para clientes, equipos o eventos de {{empresa}}. ¿Tienen alguna fecha o evento próximo donde esto podría tener sentido? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Regalos corporativos con historia y propósito</div><div class="body">Hola {{nombre}}, le comparto opciones por volumen: desde regalos individuales hasta programas para decenas o cientos de destinatarios, con posibilidad de personalización. ¿Le sirve que le envíe el catálogo con precios por volumen? Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Pensando en su próxima temporada de regalos</div><div class="body">Hola {{nombre}}, sé que la planificación de regalos corporativos suele hacerse con anticipación. Si {{empresa}} tiene una fecha clave próxima (fin de año, aniversario, evento de cliente), con gusto le preparo una propuesta a tiempo. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Disponible para su próxima ocasión</div><div class="body">Hola {{nombre}}, pauso el seguimiento por ahora para no ser inoportuno. Cuando tengan una ocasión donde un regalo con historia tenga sentido, aquí estaré. Saludos, {{remitente}}.</div></div>
+
+  <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI. Le escribí sobre regalos corporativos de cacao ecuatoriano premium para {{empresa}}. ¿Tienen alguna fecha próxima donde esto encaje?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿pudo ver el catálogo de AWKI para regalos por volumen? Puedo ajustar la propuesta a la fecha que tengan en mente.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedo disponible para su próxima temporada de regalos corporativos. ¡Éxitos con {{empresa}}!</div></div>
+
+  <!-- AIRLINES -->
+  <h3 class="sub">Aerolíneas premium — hub LAX (Oportunidad 2)</h3>
+
+  <h4 class="sub2">Secuencia de Email</h4>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Amenidad de cabina premium con narrativa de origen ecuatoriano</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium con base en Los Ángeles. Le escribo porque creemos que nuestro producto podría encajar como amenidad de cabina premium o first class: origen auténtico, presentación refinada y una narrativa que añade valor a la experiencia de vuelo. ¿Sería usted la persona indicada para evaluar este tipo de propuestas dentro de {{empresa}}, o podría orientarme a quién dirigirme? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Amenidad de cabina premium con narrativa de origen ecuatoriano</div><div class="body">Hola {{nombre}}, entiendo que este tipo de decisiones suele involucrar varios equipos. Si es de utilidad, puedo enviar una ficha técnica del producto y una muestra física para que la evalúen internamente. ¿Le sirve que la envíe esta semana? Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Seguimiento — AWKI para {{empresa}}</div><div class="body">Hola {{nombre}}, quería confirmar si el material que envié llegó a la persona correcta dentro de {{empresa}}. Si prefiere que hable directamente con otro equipo (compras, experiencia de cliente), con gusto ajusto el contacto. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Quedamos disponibles para una futura evaluación</div><div class="body">Hola {{nombre}}, entiendo que este tipo de propuestas puede tomar tiempo en evaluarse o no ser prioridad ahora. Pauso el seguimiento activo, pero quedamos disponibles si en el futuro quieren evaluar AWKI como parte de su experiencia premium. Saludos, {{remitente}}.</div></div>
+
+  <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
+  <p class="note">Canal secundario y opcional para este segmento: procurement suele preferir email formal; usar SMS/WhatsApp solo si el contacto lo autorizó explícitamente.</p>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI. Le envié un correo sobre una posible amenidad de cabina premium para {{empresa}}. Quedo atento a sus comentarios.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿tuvo oportunidad de revisar la propuesta de AWKI? Puedo enviar más información si es útil.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedamos disponibles para cuando {{empresa}} quiera evaluar este tipo de propuestas. Gracias por su tiempo.</div></div>
+</section>
+
+<!-- 05 -->
+<section id="s05">
+  <div class="sec-head"><span class="num">05</span><h2>Reunión Comercial y Modalidades de Pedido</h2></div>
+  <p>La reunión comercial (30 minutos) confirma tres datos antes de proponer: aplicación real del producto en el negocio del prospecto, volumen estimado de consumo o reventa, y capacidad logística de recepción.</p>
+
+  <h3 class="sub">La reunión releva tres datos</h3>
+  <ol>
+    <li>Aplicación concreta (venta en anaquel, experiencia, amenidad, regalo)</li>
+    <li>Volumen estimado y frecuencia esperada</li>
+    <li>Capacidad logística (recepción, almacenamiento, mínimos de pedido)</li>
+  </ol>
+
+  <h3 class="sub">Modalidades de pedido</h3>
+  <table>
+    <thead><tr><th>Modalidad</th><th>Cuándo se usa</th><th>Recurrencia</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Starter order</strong></td><td>Primer pedido de prueba, cuenta nueva sin historial</td><td>Única, define si la cuenta pasa a Expansión de Cuentas</td></tr>
+      <tr><td><strong>Pedido por volumen (wholesale)</strong></td><td>Cuenta con fit alto y volumen estimado desde el inicio</td><td>Periódica, sujeta a condiciones negociadas</td></tr>
+      <tr><td><strong>Programa de expansión recurrente</strong></td><td>Cuenta ya activa en pipeline de Expansión de Cuentas (reventa, upsell o cross-sell)</td><td>Mensual o por ciclo de reposición acordado</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card"><span class="label">Principio rector</span>El Starter order funciona como gancho: reduce el riesgo percibido por el comprador y genera la primera señal real de rotación del producto antes de negociar condiciones de volumen. Ninguna condición de precio o exclusividad se ofrece a ciegas antes de la reunión: la propuesta se ajusta siempre a la aplicación y volumen confirmados en esa conversación.</div>
+</section>
+
+<!-- 06 -->
+<section id="s06" class="alt">
+  <div class="sec-head"><span class="num">06</span><h2>Objeciones Frecuentes</h2></div>
+
+  <div class="qa"><div class="q">¿Cuál es el pedido mínimo (MOQ)?</div><div class="a">El Starter order tiene un mínimo reducido pensado para prueba; los pedidos de volumen ajustan el mínimo según el segmento y la capacidad logística confirmada en la reunión.</div></div>
+  <div class="qa"><div class="q">¿Ofrecen exclusividad de zona o de tienda?</div><div class="a">No en la fase de validación en Los Ángeles. La exclusividad se evalúa únicamente para cuentas con historial de recompra y volumen consistente.</div></div>
+  <div class="qa"><div class="q">¿Qué pasa si el producto no rota como esperado?</div><div class="a">Se revisa junto al comprador la exhibición, el punto de venta y la narrativa usada; el ajuste de modalidad o de mix de producto se decide en la reunión de seguimiento, no de forma unilateral.</div></div>
+  <div class="qa"><div class="q">¿Hacen consignación o solo venta directa?</div><div class="a">El modelo actual es venta directa (wholesale); la consignación no forma parte del alcance de esta fase y se evalúa solo como excepción justificada.</div></div>
+  <div class="qa"><div class="q">Motivo de pérdida a vigilar</div><div class="a">"Precio" aparece con frecuencia como motivo declarado, pero en la mayoría de los casos encubre falta de fit real de segmento o ausencia de decisor confirmado. Todo Closed Lost debe registrar el motivo específico para distinguir precio real de fit débil.</div></div>
+</section>
+
+<!-- 07 -->
+<section id="s07">
+  <div class="sec-head"><span class="num">07</span><h2>HubSpot</h2></div>
+
+  <h3 class="sub">Pipelines</h3>
+  <p>"Ventas" (7 etapas, ver sección 03 — solo entran contactos SQL, calificados previamente como MQL en Apollo) y "Expansión de Cuentas" (7 etapas, gestionado por separado para reventa, upselling y cross-selling en cuentas con primer pedido confirmado).</p>
+
+  <h4 class="sub2">Propiedades de Empresas</h4>
+  <p>Tipo de cuenta, segmento, subsegmento, mercado, número de ubicaciones, canal, evento, fuente Apollo, prioridad, fit, aplicación, capacidad de compra, frecuencia, potencial mensual, fecha de primera compra, fecha de última compra, próxima recompra.</p>
+
+  <h4 class="sub2">Propiedades de Contactos</h4>
+  <p>Cargo, función, nivel de decisión, idioma, estado de prospección, interés, producto de interés, rol de compra, prioridad, último resultado, próximo paso, fecha, consentimiento comercial.</p>
+
+  <h4 class="sub2">Propiedades de Negocios</h4>
+  <p>Tipo de oportunidad (Ventas/Expansión de Cuentas), subtipo (starter order, reventa, upsell, cross-sell), aplicación, productos, cantidad, frecuencia, valor potencial, próximo paso, objeción, razón de pérdida, canal, fecha de reposición.</p>
+
+  <h4 class="sub2">Vistas operativas</h4>
+  <ul>
+    <li><strong>Contactos:</strong> nuevos prospectos, sin actividad, respuestas positivas, seguimientos vencidos, ferias, Apollo, inbound.</li>
+    <li><strong>Empresas:</strong> prioridad A, retail, wellness, hospitality, gifting, por estado, clientes activos, cuentas en riesgo.</li>
+    <li><strong>Negocios:</strong> abiertos, sin próxima actividad, reuniones, propuestas, negociaciones, cierres, estancados, perdidos, recompra.</li>
+  </ul>
+
+  <h3 class="sub">Checklist de creación de negocio — Obligatorios al crear</h3>
+  <table>
+    <thead><tr><th>Campo</th><th>Cómo se llena</th></tr></thead>
+    <tbody>
+      <tr><td>Empresa asociada</td><td>Vinculada desde el registro de Empresa validado en ICP</td></tr>
+      <tr><td>Segmento</td><td>Heredado de la Empresa</td></tr>
+      <tr><td>Tipo de oportunidad</td><td>Ventas o Expansión de Cuentas, según historial de la cuenta; si es SQL, confirmar que ya tenía MQL en Apollo</td></tr>
+      <tr><td>Canal de origen</td><td>Apollo, Feria, Farmer Market o Inbound</td></tr>
+      <tr><td>Próximo paso + fecha</td><td>Definido por el comercial al crear el negocio</td></tr>
+    </tbody>
+  </table>
+  <p class="note">No forzar al crear: valor potencial exacto y frecuencia de recompra — ambos se confirman en la reunión, no antes.</p>
+
+  <h3 class="sub">Nomenclatura de negocios</h3>
+  <p class="formula">{Empresa} – {Segmento} – {Tipo de Pedido}</p>
+  <p>Ejemplos: <em>Whole Foods LA – Retail – Starter Order</em> · <em>Zen Studio Venice – Wellness – Upsell</em> · <em>Corporate Gifts Co – Gifting – Cross-sell</em>.</p>
+
+  <h3 class="sub">Información destacada</h3>
+  <p><strong>Para Contacto:</strong> cargo, nivel de decisión, canal de origen, último resultado.<br><strong>Para Negocio:</strong> etapa, valor potencial, canal, próximo paso.</p>
+
+  <div class="card"><span class="label">Alcance excluido en esta fase (Sales Starter)</span>Workflows avanzados, lead scoring automatizado, scoring de comportamiento, reportería BI avanzada, objetos personalizados, atribución multi-toque, cohortes automatizadas. La disciplina operativa manual (revisión semanal, tareas, vistas, plantillas) compensa estas limitaciones mientras se valida el mercado.</div>
+</section>
+
+<!-- 08 -->
+<section id="s08" class="alt">
+  <div class="sec-head"><span class="num">08</span><h2>KPIs Comerciales</h2></div>
+
+  <h3 class="sub">Tabla A — Funnel comercial (meta mensual, fase de validación en Los Ángeles)</h3>
+  <table>
+    <thead><tr><th>Métrica</th><th>Meta</th></tr></thead>
+    <tbody>
+      <tr><td>Empresas seleccionadas</td><td>150–200</td></tr>
+      <tr><td>Contactos válidos</td><td>200–300</td></tr>
+      <tr><td>Contactos abordados</td><td>150–250</td></tr>
+      <tr><td>Respuestas</td><td>20–30</td></tr>
+      <tr><td>Respuestas positivas</td><td>10–15</td></tr>
+      <tr><td>Reuniones</td><td>6–10</td></tr>
+      <tr><td>Propuestas (Starter order)</td><td>4–7</td></tr>
+      <tr><td>Clientes nuevos</td><td>2–5</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Estas cifras son hipótesis de operación y deben revisarse con datos reales de los primeros ciclos.</p>
+
+  <h3 class="sub">Tabla B — Calidad de cartera</h3>
+  <table>
+    <thead><tr><th>Métrica</th><th>Qué revela</th></tr></thead>
+    <tbody>
+      <tr><td>Tasa MQL → SQL (Apollo → Ventas)</td><td>Qué tan bien el comercial confirma los MQL que Apollo entrega, antes de crearlos como negocio</td></tr>
+      <tr><td>Fit promedio (A/B/C) de cuentas activas</td><td>Si la prospección respeta el ICP o se está diluyendo</td></tr>
+      <tr><td>% de cuentas clase A en pipeline</td><td>Concentración de esfuerzo en cuentas de alto potencial</td></tr>
+      <tr><td>Mix de canal (Apollo / Feria / Farmer Market / Inbound)</td><td>Qué canal está aportando mejores cuentas, no solo más volumen</td></tr>
+      <tr><td>Ranking de motivos de pérdida</td><td>Si "precio" encubre fit débil o falta de decisor</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Tabla C — Salud del pipeline</h3>
+  <table>
+    <thead><tr><th>Métrica</th><th>Qué revela</th></tr></thead>
+    <tbody>
+      <tr><td>Negocios sin próxima actividad</td><td>Riesgo de estancamiento por falta de seguimiento</td></tr>
+      <tr><td>Antigüedad de propuestas abiertas (Starter order enviado)</td><td>Ciclos de decisión que se alargan sin razón registrada</td></tr>
+      <tr><td>Deals por comercial</td><td>Balance de carga de trabajo</td></tr>
+      <tr><td>Cuentas en riesgo (pipeline Expansión de Cuentas)</td><td>Reposición vencida o caída de frecuencia</td></tr>
+      <tr><td>Ticket promedio y recompra</td><td>Si el negocio escala más allá del primer pedido</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 09 -->
+<section id="s09">
+  <div class="sec-head"><span class="num">09</span><h2>Roles y Cadencias</h2></div>
+
+  <table>
+    <thead><tr><th>Rol</th><th>Responsabilidad</th></tr></thead>
+    <tbody>
+      <tr><td>Comercial asignado</td><td>Confirma el MQL de Apollo como SQL antes de crear el negocio, prospección activa, seguimiento de tareas, registro de actividades, próximo paso siempre definido</td></tr>
+      <tr><td>Responsable de Expansión de Cuentas</td><td>Seguimiento de reposición, detección de oportunidades de upsell/cross-sell, gestión de cuentas en riesgo</td></tr>
+      <tr><td>Responsable de ferias / Farmer Markets</td><td>Captura de leads en el evento, registro inmediato en HubSpot con canal de origen</td></tr>
+      <tr><td>Gerencia</td><td>Aprueba condiciones de pedido por volumen y excepciones de precio antes de enviarse al prospecto</td></tr>
+      <tr><td>Dirección comercial</td><td>Revisión de pipeline, KPIs y calidad de cartera; ajusta listas de Apollo y prioridades de segmento</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Cadencia diaria</h3>
+  <p>Revisar tareas vencidas, ejecutar seguimientos, registrar llamadas y correos, actualizar oportunidades, definir próximo paso, crear tareas nuevas, revisar leads nuevos.</p>
+
+  <h3 class="sub">Cadencia semanal</h3>
+  <p>Prospectos contactados, respuestas, reuniones, propuestas, ganados y perdidos, razones de pérdida, negocios estancados, próximos cierres, estado de recompra, calidad de datos.</p>
+
+  <h3 class="sub">Cadencia mensual</h3>
+  <p>Revisión de KPIs de funnel, calidad de cartera y salud del pipeline; ajuste de listas priorizadas en Apollo; decisión sobre expansión geográfica solo si conversión, ticket, recurrencia y capacidad logística en Los Ángeles están validados.</p>
+</section>
+
+<!-- 10 -->
+<section id="s10" class="alt">
+  <div class="sec-head"><span class="num">10</span><h2>Glosario</h2></div>
+  <dl class="glossary">
+    <dt>ICP (Ideal Customer Profile)</dt><dd>Perfil de cliente ideal definido por segmento, mercado, aplicación y decisor.</dd>
+    <dt>MQL (Marketing Qualified Lead)</dt><dd>Contacto identificado y validado en Apollo con fit de ICP suficiente; todavía no es un negocio en HubSpot ni tiene la confirmación de un comercial.</dd>
+    <dt>SQL (Sales Qualified Lead)</dt><dd>MQL de Apollo al que un comercial confirma fit, aplicación y decisor. Es el único punto de entrada al pipeline de Ventas en HubSpot.</dd>
+    <dt>Fit (A/B/C)</dt><dd>Clasificación de una cuenta según el sistema de 80 puntos (segmento, mercado, producto, tienda/comunidad, aplicación, decisor).</dd>
+    <dt>Starter order</dt><dd>Primer pedido de prueba, mínimo reducido, que define si una cuenta pasa de Ventas a Expansión de Cuentas.</dd>
+    <dt>Pipeline de Ventas</dt><dd>Proceso de 7 etapas para cerrar el primer pedido de una cuenta nueva; arranca en "SQL asignado", nunca antes.</dd>
+    <dt>Pipeline de Expansión de Cuentas</dt><dd>Proceso de 7 etapas que agrupa reventa (reposición), upselling y cross-selling, y rastrea el riesgo de inactividad en cuentas con primer pedido confirmado.</dd>
+    <dt>Canal de origen</dt><dd>Apollo, Feria, Farmer Market o Inbound; obligatorio en toda oportunidad.</dd>
+    <dt>Cuenta en riesgo</dt><dd>Cuenta activa en Expansión de Cuentas con reposición vencida o caída de frecuencia de compra.</dd>
+    <dt>BANT adaptado</dt><dd>Criterio de calificación comercial que se confirma durante la etapa "Reunión realizada" del pipeline de Ventas, posterior a la confirmación de SQL.</dd>
+    <dt>Decisor identificado</dt><dd>Contacto con cargo y nivel de decisión confirmado dentro de la cuenta.</dd>
+    <dt>Nomenclatura de negocios</dt><dd>Formato estándar {Empresa} – {Segmento} – {Tipo de Pedido} para identificar negocios en HubSpot.</dd>
+    <dt>Mercado prioritario</dt><dd>Los Ángeles, California, en la fase inicial de validación; la expansión geográfica solo procede tras validar conversión, ticket, recurrencia y capacidad logística.</dd>
+  </dl>
+</section>
+
+<footer>
+  <img src="data:image/png;base64,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" alt="AWKI">
+  <div>Playbook Comercial · AWKI USA</div>
+</footer>
+
+</body>
+</html>
