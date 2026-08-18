@@ -146,6 +146,17 @@ li{margin-bottom:6px;}
 .glossary dt{font-family:Georgia,serif;font-weight:700;font-size:14.5px;margin-top:14px;color:var(--ink);}
 .glossary dd{margin:2px 0 0 0;font-size:14px;color:#333;}
 .formula{font-family:monospace;background:var(--ink);color:var(--gold);padding:8px 12px;border-radius:4px;display:inline-block;margin:4px 0 14px;font-size:13.5px;}
+code{font-family:monospace;background:rgba(122,62,29,.08);color:var(--cacao);padding:2px 7px;border-radius:3px;font-size:13px;white-space:nowrap;}
+.tier{margin:10px 0 16px;}
+.tier .tier-label{font-family:Georgia,serif;font-weight:700;font-size:13px;color:var(--ink);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px;display:block;}
+.list-card{border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin-bottom:22px;background:var(--paper);}
+.alt .list-card{background:var(--paper);}
+.list-card h4.list-name{font-family:Georgia,serif;font-weight:700;font-size:18px;color:var(--ink);margin-bottom:4px;}
+.list-card .prio{display:inline-block;margin-bottom:14px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
+@media (max-width:760px){.two-col{grid-template-columns:1fr;}}
+.taglist{margin:0 0 14px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px;}
+.taglist li{margin:0;}
 
 footer{
   background:var(--ink);color:var(--line);
@@ -183,13 +194,14 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <a href="#s01"><span class="n">01</span> Modelo de Negocio</a>
     <a href="#s02"><span class="n">02</span> Cliente Ideal (ICP)</a>
     <a href="#s03"><span class="n">03</span> Proceso Comercial</a>
-    <a href="#s04"><span class="n">04</span> Secuencias de Prospección</a>
-    <a href="#s05"><span class="n">05</span> Reunión y Modalidades de Pedido</a>
-    <a href="#s06"><span class="n">06</span> Objeciones Frecuentes</a>
-    <a href="#s07"><span class="n">07</span> HubSpot</a>
-    <a href="#s08"><span class="n">08</span> KPIs Comerciales</a>
-    <a href="#s09"><span class="n">09</span> Roles y Cadencias</a>
-    <a href="#s10"><span class="n">10</span> Glosario</a>
+    <a href="#s04"><span class="n">04</span> Listas de Apollo</a>
+    <a href="#s05"><span class="n">05</span> Secuencias de Prospección</a>
+    <a href="#s06"><span class="n">06</span> Reunión y Modalidades de Pedido</a>
+    <a href="#s07"><span class="n">07</span> Objeciones Frecuentes</a>
+    <a href="#s08"><span class="n">08</span> HubSpot</a>
+    <a href="#s09"><span class="n">09</span> KPIs Comerciales</a>
+    <a href="#s10"><span class="n">10</span> Roles y Cadencias</a>
+    <a href="#s11"><span class="n">11</span> Glosario</a>
   </div>
 </div>
 
@@ -316,8 +328,149 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 </section>
 
 <!-- 04 -->
-<section id="s04" class="alt">
-  <div class="sec-head"><span class="num">04</span><h2>Secuencias de Prospección</h2></div>
+<section id="s04">
+  <div class="sec-head"><span class="num">04</span><h2>Listas de Apollo</h2></div>
+  <p>Cinco listas de personas en Apollo, una por segmento ICP (ver sección 02), que operacionalizan la Fase 0 descrita en la sección 03: aquí se construye el universo de contactos, se aplica el filtro de cargos y empresas, y de ahí sale el MQL que un comercial confirma como SQL. No se mezclan cargos de distintos segmentos en una sola búsqueda — cada segmento tiene propuesta de valor y secuencia de prospección propia (ver sección 05).</p>
+
+  <h3 class="sub">Configuración general para todas las listas</h3>
+  <table>
+    <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Location</td><td>Los Angeles, California, United States · Greater Los Angeles Area</td></tr>
+      <tr><td>Email Status</td><td>Verified</td></tr>
+      <tr><td>Nivel recomendado</td><td>Owner, Founder, Manager, Director, Head, VP</td></tr>
+      <tr><td>Excluir inicialmente</td><td>Intern, Assistant, Student, Consultant, Freelancer</td></tr>
+    </tbody>
+  </table>
+
+  <!-- LISTA 01 -->
+  <div class="list-card">
+    <span class="pill cacao prio">Prioridad A — Principal</span>
+    <h4 class="list-name">01 · Retail | Buyers &amp; Owners</h4>
+    <div class="two-col">
+      <div>
+        <div class="tier"><span class="tier-label">Tier 1 — Compradores</span>Buyer, Retail Buyer, Food Buyer, Grocery Buyer, Specialty Food Buyer, Specialty Foods Buyer, Category Buyer, Category Manager, Grocery Category Manager, Food Category Manager, Purchasing Manager, Procurement Manager, Merchandise Manager, Merchandising Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 2 — Propietarios</span>Founder, Co-Founder, Owner, Co-Owner, President.</div>
+        <div class="tier"><span class="tier-label">Tier 3 — Gestión de tienda</span>Store Manager, General Manager, Retail Manager.</div>
+      </div>
+      <div>
+        <div class="tier"><span class="tier-label">Keywords de empresa</span>Gourmet, Specialty Food, Natural Foods, Organic, Wellness, Health Food, Gourmet Market, Specialty Grocery, Chocolate, Cacao, Artisan Food.</div>
+        <div class="tier"><span class="tier-label">Evitar</span>Convenience stores, gas stations, mass-market discount stores, supermercados sin posicionamiento premium, tiendas exclusivamente online sin comunidad o retail físico.</div>
+      </div>
+    </div>
+    <p class="formula">AWKI | LA | Retail | Buyers &amp; Owners</p>
+  </div>
+
+  <!-- LISTA 02 -->
+  <div class="list-card">
+    <span class="pill prio">Prioridad A/B — Secundario</span>
+    <h4 class="list-name">02 · Wellness | Owners &amp; Program Directors</h4>
+    <div class="two-col">
+      <div>
+        <div class="tier"><span class="tier-label">Tier 1</span>Founder, Co-Founder, Owner, Studio Owner.</div>
+        <div class="tier"><span class="tier-label">Tier 2</span>Program Director, Wellness Director, Retreat Director, Retreat Manager, Experience Director, Community Director, Events Director.</div>
+        <div class="tier"><span class="tier-label">Tier 3</span>General Manager, Studio Manager, Wellness Manager, Spa Director, Spa Manager.</div>
+      </div>
+      <div>
+        <div class="tier"><span class="tier-label">Keywords de empresa</span>Yoga, Meditation, Wellness, Retreat, Holistic Wellness, Mindfulness, Healing, Breathwork, Spiritual Wellness, Wellness Center, Yoga Studio, Meditation Center, Spa.</div>
+        <div class="tier"><span class="tier-label">Aplicaciones AWKI a priorizar</span>Espacios que realicen retreats, workshops, ceremonies, wellness events, mindfulness events, community events.</div>
+      </div>
+    </div>
+    <p class="formula">AWKI | LA | Wellness | Owners &amp; Programs</p>
+  </div>
+
+  <!-- LISTA 03 -->
+  <div class="list-card">
+    <span class="pill prio">Prioridad B — Terciario</span>
+    <h4 class="list-name">03 · Hospitality | GM &amp; F&amp;B</h4>
+    <div class="two-col">
+      <div>
+        <div class="tier"><span class="tier-label">Tier 1 — Food &amp; Beverage</span>Director of Food and Beverage, Food and Beverage Director, F&amp;B Director, Director of F&amp;B, Food and Beverage Manager, F&amp;B Manager, Beverage Director.</div>
+        <div class="tier"><span class="tier-label">Tier 2 — Dirección</span>General Manager, Hotel General Manager, Managing Director, Hotel Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 3 — Experiencia / Compras</span>Director of Guest Experience, Guest Experience Manager, Director of Operations, Purchasing Manager, Procurement Manager, Retail Manager, Gift Shop Manager.</div>
+      </div>
+      <div>
+        <div class="tier"><span class="tier-label">Keywords de empresa</span>Boutique Hotel, Luxury Hotel, Resort, Boutique Resort, Luxury Hospitality, Specialty Cafe, Premium Restaurant, Boutique Lodge, Hotel, Hospitality.</div>
+        <div class="tier"><span class="tier-label">Priorizar</span>Boutique hotels, luxury hotels, resorts, lodges, hoteles con gift shop, hoteles con programas de bienvenida, restaurantes premium, cafés especializados.</div>
+      </div>
+    </div>
+    <p class="formula">AWKI | LA | Hospitality | GM &amp; F&amp;B</p>
+  </div>
+
+  <!-- LISTA 04 -->
+  <div class="list-card">
+    <span class="pill prio">Prioridad B — Oportunidad</span>
+    <h4 class="list-name">04 · Corporate Gifting | Events &amp; HR</h4>
+    <div class="two-col">
+      <div>
+        <div class="tier"><span class="tier-label">Tier 1 — Empresas de regalos</span>Founder, Owner, Corporate Gifting Manager, Gifting Manager, Gift Program Manager, Corporate Gifts Manager, Client Gifting Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 2 — Eventos</span>Event Planner, Corporate Event Planner, Event Manager, Events Manager, Director of Events, Event Director, Experiential Marketing Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 3 — RR.HH. / Employee Experience</span>HR Manager, Human Resources Manager, People Operations Manager, Employee Experience Manager, Employee Engagement Manager, Director of People, People &amp; Culture Manager.</div>
+      </div>
+      <div>
+        <div class="tier"><span class="tier-label">Keywords de empresa</span>Corporate Gifting, Corporate Gifts, Gift Boxes, Gift Agency, Event Planning, Event Agency, Experiential Marketing, Employee Gifting, Client Gifting.</div>
+        <div class="tier"><span class="tier-label">Aplicaciones AWKI</span>Client gifts, employee gifts, holiday gifting, executive gifts, event gifts, welcome kits, anniversary gifts.</div>
+      </div>
+    </div>
+    <p class="formula">AWKI | LA | Corporate Gifting | Events &amp; HR</p>
+  </div>
+
+  <!-- LISTA 05 -->
+  <div class="list-card">
+    <span class="pill prio">Prioridad C — Oportunidad futura</span>
+    <h4 class="list-name">05 · Airlines | Procurement</h4>
+    <p class="note" style="margin-top:0;">Esta lista se maneja aparte: el ciclo comercial es más largo y el proceso de compra, más corporativo.</p>
+    <div class="two-col">
+      <div>
+        <div class="tier"><span class="tier-label">Tier 1</span>Procurement Manager, Procurement Director, Director of Procurement, Strategic Sourcing Manager, Sourcing Manager, Purchasing Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 2 — Producto / Experiencia</span>Director of Customer Experience, Customer Experience Director, Director of Inflight Experience, Inflight Experience Manager, Director of Guest Experience, Product Manager Inflight, Premium Experience Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 3</span>Catering Manager, Director of Catering, Inflight Catering Manager, Food and Beverage Manager.</div>
+      </div>
+      <div>
+        <div class="tier"><span class="tier-label">Empresas a priorizar</span>Aerolíneas con operaciones relevantes en LAX (Los Angeles International Airport).</div>
+      </div>
+    </div>
+    <p class="formula">AWKI | LAX | Airlines | Procurement</p>
+  </div>
+
+  <h3 class="sub">Orden recomendado de prospección</h3>
+  <table>
+    <thead><tr><th>Prioridad</th><th>Lista</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><code>AWKI | LA | Retail | Buyers &amp; Owners</code></td><td>ICP principal y aplicación comercial más evidente: reventa directa del producto.</td></tr>
+      <tr><td>2</td><td><code>AWKI | LA | Wellness | Owners &amp; Programs</code></td><td>Muy alineado con la narrativa de cacao, ritual, bienestar, origen y experiencias.</td></tr>
+      <tr><td>3</td><td><code>AWKI | LA | Hospitality | GM &amp; F&amp;B</code></td><td>Buen potencial para amenities, gift shop, welcome gifts, experiencias y consumo F&amp;B.</td></tr>
+      <tr><td>4</td><td><code>AWKI | LA | Corporate Gifting | Events &amp; HR</code></td><td>Puede producir pedidos de mayor volumen, aunque con más estacionalidad.</td></tr>
+      <tr><td>5</td><td><code>AWKI | LAX | Airlines | Procurement</code></td><td>Prospección selectiva, no fuente principal de volumen inicial.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Tags recomendados en Apollo</h3>
+  <table>
+    <thead><tr><th>Categoría</th><th>Tags</th></tr></thead>
+    <tbody>
+      <tr><td>Segmento</td><td><ul class="taglist"><li><code>AWKI_Retail</code></li><li><code>AWKI_Wellness</code></li><li><code>AWKI_Hospitality</code></li><li><code>AWKI_Gifting</code></li><li><code>AWKI_Airlines</code></li></ul></td></tr>
+      <tr><td>Rol</td><td><ul class="taglist"><li><code>Decision_Maker</code></li><li><code>Influencer</code></li><li><code>Procurement</code></li><li><code>Owner</code></li><li><code>Operations</code></li></ul></td></tr>
+      <tr><td>Prioridad</td><td><ul class="taglist"><li><code>ICP_A</code></li><li><code>ICP_B</code></li><li><code>ICP_C</code></li></ul></td></tr>
+      <tr><td>Mercado</td><td><ul class="taglist"><li><code>Los_Angeles</code></li><li><code>LAX</code></li></ul></td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Estructura final</h3>
+  <p>En Apollo se debe terminar inicialmente con estas cinco listas:</p>
+  <ol>
+    <li><code>AWKI | LA | Retail | Buyers &amp; Owners</code></li>
+    <li><code>AWKI | LA | Wellness | Owners &amp; Programs</code></li>
+    <li><code>AWKI | LA | Hospitality | GM &amp; F&amp;B</code></li>
+    <li><code>AWKI | LA | Corporate Gifting | Events &amp; HR</code></li>
+    <li><code>AWKI | LAX | Airlines | Procurement</code></li>
+  </ol>
+  <div class="card"><span class="label">Principio rector</span>No se mezclan cargos de distintos segmentos en una sola búsqueda de Apollo: cada segmento tiene propuesta de valor y secuencia de email/SMS-WhatsApp diferente (sección 05).</div>
+</section>
+
+<!-- 05 -->
+<section id="s05" class="alt">
+  <div class="sec-head"><span class="num">05</span><h2>Secuencias de Prospección</h2></div>
   <p>Secuencias completas por segmento ICP, en dos canales diferenciados: <strong>email</strong> (4 touches, Día 0 a Día 14) y <strong>SMS / WhatsApp</strong> (3 touches, Día 1 a Día 10), corriendo en paralelo y sin pisarse. Ambas corren en Apollo/outbound durante la etapa de MQL, antes de que el contacto se confirme como SQL y entre al pipeline de Ventas.</p>
   <p class="note">SMS/WhatsApp solo se activa sobre contactos con número válido y consentimiento comercial registrado (propiedad de Contacto). Es un canal de refuerzo, más breve y directo que el email — nunca reemplaza la explicación completa de la propuesta de valor.</p>
 
@@ -325,77 +478,77 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <h3 class="sub">Retail especializado (ICP Primario)</h3>
 
   <h4 class="sub2">Secuencia de Email</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Un cacao ecuatoriano que va más allá del chocolate tradicional</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, una marca de cacao ecuatoriano premium que llegó a Estados Unidos en 2025. Vi que {{empresa}} tiene una selección cuidada de productos gourmet/naturales, y creo que nuestro cacao podría complementarla bien: origen ecuatoriano auténtico, presentación premium y una historia de propósito y bienestar que va más allá del chocolate tradicional. ¿Tendría sentido enviarles una muestra o coordinar una llamada breve de 15 minutos para mostrarle el portafolio? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Un cacao ecuatoriano que va más allá del chocolate tradicional</div><div class="body">Hola {{nombre}}, le escribo de nuevo por si el correo anterior se perdió entre tantos pendientes. Puedo enviarle una muestra física de nuestro cacao sin compromiso, junto con la ficha de producto y precios de wholesale, para que usted decida si tiene fit con {{empresa}}. ¿Le sirve que se la envíe esta semana? Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Una pregunta rápida sobre {{empresa}}</div><div class="body">Hola {{nombre}}, sé que su tiempo es limitado, así que seré breve: ¿{{empresa}} está evaluando ampliar su categoría de chocolate/cacao premium este trimestre? Si la respuesta es sí, me encantaría mostrarle cómo trabajamos con tiendas similares. Si no es el momento, lo entiendo y no quiero insistir más de lo necesario. Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Cierro este contacto por ahora</div><div class="body">Hola {{nombre}}, no he tenido noticias suyas, así que voy a pausar el seguimiento por ahora para no ser inoportuno. Si en algún momento quiere conocer el portafolio de AWKI, aquí estaré. Le deseo mucho éxito con {{empresa}}. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Subject: An Ecuadorian cacao that goes beyond traditional chocolate</div><div class="body">Hi {{nombre}}, I'm {{remitente}} from AWKI, a premium Ecuadorian cacao brand that launched in the U.S. in 2025. I noticed {{empresa}} carries a curated selection of gourmet/natural products, and I think our cacao could complement it well: authentic Ecuadorian origin, premium presentation, and a story of purpose and wellness that goes beyond traditional chocolate. Would it make sense to send a sample or set up a quick 15-minute call to walk you through the portfolio? Best, {{remitente}} — AWKI, Premium Ecuadorian Cacao.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Subject: Re: An Ecuadorian cacao that goes beyond traditional chocolate</div><div class="body">Hi {{nombre}}, following up in case my last email got buried. I can send a physical sample of our cacao at no cost, along with the product sheet and wholesale pricing, so you can decide if it's a fit for {{empresa}}. Would this week work to send it over? Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Subject: Quick question about {{empresa}}</div><div class="body">Hi {{nombre}}, I know your time is limited, so I'll keep this short: is {{empresa}} looking to expand its premium chocolate/cacao category this quarter? If so, I'd love to show you how we work with similar stores. If it's not the right time, I completely understand and won't push further. Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Subject: Closing the loop for now</div><div class="body">Hi {{nombre}}, I haven't heard back, so I'll pause my follow-ups for now to avoid being a bother. If you'd ever like to explore AWKI's portfolio, I'll be here. Wishing {{empresa}} continued success. Best, {{remitente}}.</div></div>
 
   <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI (cacao ecuatoriano premium). Le escribí un correo sobre un producto que podría complementar la selección de {{empresa}}. ¿Le parece si coordinamos 15 min esta semana?</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿pudo ver el correo sobre AWKI? Puedo enviarle una muestra sin compromiso para que la prueben en {{empresa}}. Avíseme si le interesa.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, última nota de mi parte: si en el futuro quiere explorar cacao ecuatoriano premium para {{empresa}}, escríbame cuando le convenga. ¡Éxitos!</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hi {{nombre}}, this is {{remitente}} from AWKI (premium Ecuadorian cacao). I sent an email about a product that could complement {{empresa}}'s selection. Would you be open to a 15-min call this week?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hi {{nombre}}, did you get a chance to see the email about AWKI? I can send a free sample for {{empresa}} to try. Let me know if you're interested!</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hi {{nombre}}, one last note from me: if you'd like to explore premium Ecuadorian cacao for {{empresa}} down the road, feel free to reach out whenever works for you. Best of luck!</div></div>
 
   <!-- WELLNESS -->
   <h3 class="sub">Wellness (ICP Secundario)</h3>
 
   <h4 class="sub2">Secuencia de Email</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Cacao premium para experiencias de bienestar en {{empresa}}</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium pensado para experiencias de bienestar: ceremonias, retiros y talleres. Vi el trabajo que hacen en {{empresa}} y creo que nuestro cacao podría integrarse bien a sus espacios — como parte de una ceremonia, un obsequio para participantes o un producto de tienda. ¿Le interesaría que le cuente más o le envíe una muestra para su próximo evento? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Cacao premium para experiencias de bienestar en {{empresa}}</div><div class="body">Hola {{nombre}}, quería dejarle una idea concreta: podemos armar un kit de prueba para un próximo taller o retiro en {{empresa}}, sin costo, para que usted y su comunidad lo experimenten directamente. ¿Tiene algún evento próximo donde esto tendría sentido? Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Cacao con propósito para su próximo retiro</div><div class="body">Hola {{nombre}}, sé que la agenda de un espacio de bienestar es intensa, así que seré directo: si tiene un retiro, taller o ceremonia en las próximas semanas, con gusto le envío una muestra de cacao AWKI para esa ocasión. Avíseme si tiene sentido y coordinamos. Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Dejo la puerta abierta</div><div class="body">Hola {{nombre}}, no quiero saturar su bandeja, así que pauso el seguimiento por ahora. Cuando tengan un evento donde el cacao ceremonial tenga sentido, aquí estaré. Le deseo mucha luz en su trabajo con {{empresa}}. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Subject: Premium cacao for wellness experiences at {{empresa}}</div><div class="body">Hi {{nombre}}, I'm {{remitente}} from AWKI, premium Ecuadorian cacao designed for wellness experiences: ceremonies, retreats, and workshops. I saw the work you're doing at {{empresa}} and think our cacao could fit well into your spaces — as part of a ceremony, a gift for participants, or a retail product. Would you like to hear more, or should I send a sample for your next event? Best, {{remitente}} — AWKI, Premium Ecuadorian Cacao.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Subject: Re: Premium cacao for wellness experiences at {{empresa}}</div><div class="body">Hi {{nombre}}, wanted to share a concrete idea: we can put together a trial kit for an upcoming workshop or retreat at {{empresa}}, at no cost, so you and your community can experience it firsthand. Do you have an upcoming event where this would make sense? Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Subject: Purposeful cacao for your next retreat</div><div class="body">Hi {{nombre}}, I know a wellness space's calendar is packed, so I'll be direct: if you have a retreat, workshop, or ceremony coming up, I'd be glad to send a sample of AWKI cacao for the occasion. Let me know if that's useful and we'll coordinate. Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Subject: Leaving the door open</div><div class="body">Hi {{nombre}}, I don't want to clutter your inbox, so I'll pause my follow-ups for now. Whenever you have an event where ceremonial cacao makes sense, I'll be here. Wishing you continued light in your work at {{empresa}}. Best, {{remitente}}.</div></div>
 
   <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium para ceremonias y retiros. Le escribí un correo — ¿tienen algún evento próximo en {{empresa}} donde podamos colaborar?</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿alcanzó a ver mi mensaje sobre AWKI? Puedo mandarle una muestra para su próximo taller o retiro, sin costo. Cuénteme si le interesa.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedo disponible para cuando tengan un evento donde el cacao ceremonial tenga sentido. ¡Mucho éxito con lo que hacen en {{empresa}}!</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hi {{nombre}}, this is {{remitente}} from AWKI, premium Ecuadorian cacao for ceremonies and retreats. I sent an email — do you have any upcoming events at {{empresa}} where we could collaborate?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hi {{nombre}}, did you get my message about AWKI? I can send a free sample for your next workshop or retreat. Let me know if you're interested.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hi {{nombre}}, I'll stay available whenever you have an event where ceremonial cacao fits. Wishing you continued success with {{empresa}}!</div></div>
 
   <!-- HOSPITALITY -->
   <h3 class="sub">Hospitality boutique (ICP Terciario)</h3>
 
   <h4 class="sub2">Secuencia de Email</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Una amenidad con historia para los huéspedes de {{empresa}}</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium. Creo que podríamos enriquecer la experiencia del huésped en {{empresa}}: como amenidad de habitación, detalle de bienvenida o producto disponible en su tienda/gift shop, con una historia de origen que distingue la experiencia. ¿Le interesaría ver el portafolio y precios para hospitality? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Una amenidad con historia para los huéspedes de {{empresa}}</div><div class="body">Hola {{nombre}}, le comparto un poco más de contexto: trabajamos formatos pequeños ideales para amenities y presentaciones más grandes para gift shop o eventos. Puedo enviarle una muestra física para que la evalúen en {{empresa}}. ¿Le sirve esta semana? Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Pensando en la temporada alta de {{empresa}}</div><div class="body">Hola {{nombre}}, con la temporada alta acercándose, pensé que podría ser un buen momento para incorporar un detalle diferenciador en la experiencia del huésped. Si tiene sentido, puedo enviarle una propuesta simple con opciones y precios, sin compromiso. Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Quedo disponible</div><div class="body">Hola {{nombre}}, no he sabido de usted, así que pauso el seguimiento por ahora. Si en algún momento {{empresa}} quiere explorar una amenidad o producto con historia de origen, aquí estaré. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Subject: An amenity with a story for {{empresa}}'s guests</div><div class="body">Hi {{nombre}}, I'm {{remitente}} from AWKI, premium Ecuadorian cacao. I believe we could enrich the guest experience at {{empresa}}: as a room amenity, a welcome touch, or a product available in your gift shop, backed by an origin story that sets the experience apart. Would you like to see the portfolio and hospitality pricing? Best, {{remitente}} — AWKI, Premium Ecuadorian Cacao.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Subject: Re: An amenity with a story for {{empresa}}'s guests</div><div class="body">Hi {{nombre}}, sharing a bit more context: we offer small formats ideal for amenities and larger presentations for gift shops or events. I can send a physical sample for {{empresa}} to evaluate. Would this week work? Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Subject: Thinking about {{empresa}}'s high season</div><div class="body">Hi {{nombre}}, with high season approaching, I thought this could be a good time to add a distinctive touch to the guest experience. If it makes sense, I can send a simple proposal with options and pricing, no strings attached. Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Subject: I'll stay available</div><div class="body">Hi {{nombre}}, I haven't heard back, so I'll pause my follow-ups for now. Whenever {{empresa}} wants to explore an amenity or product with an origin story, I'll be here. Best, {{remitente}}.</div></div>
 
   <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI. Le escribí sobre una amenidad de cacao ecuatoriano premium para los huéspedes de {{empresa}}. ¿Podemos coordinar una llamada breve?</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿pudo revisar la propuesta de AWKI para {{empresa}}? Puedo enviarle una muestra física esta semana si le interesa.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedo atento para cuando quieran explorar un detalle diferenciador para sus huéspedes. ¡Éxitos con {{empresa}}!</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hi {{nombre}}, this is {{remitente}} from AWKI. I wrote about a premium Ecuadorian cacao amenity for {{empresa}}'s guests. Could we set up a quick call?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hi {{nombre}}, did you get a chance to review AWKI's proposal for {{empresa}}? I can send a physical sample this week if you're interested.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hi {{nombre}}, I'll stay available whenever you want to explore a distinctive touch for your guests. Best of luck with {{empresa}}!</div></div>
 
   <!-- CORPORATE GIFTING -->
   <h3 class="sub">Corporate gifting (Oportunidad 1)</h3>
 
   <h4 class="sub2">Secuencia de Email</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Regalos corporativos con historia y propósito</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium. Para regalos corporativos, ofrecemos algo distinto a lo tradicional: origen ecuatoriano auténtico, presentación refinada y una narrativa que distingue a quien regala — ideal para clientes, equipos o eventos de {{empresa}}. ¿Tienen alguna fecha o evento próximo donde esto podría tener sentido? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Regalos corporativos con historia y propósito</div><div class="body">Hola {{nombre}}, le comparto opciones por volumen: desde regalos individuales hasta programas para decenas o cientos de destinatarios, con posibilidad de personalización. ¿Le sirve que le envíe el catálogo con precios por volumen? Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Pensando en su próxima temporada de regalos</div><div class="body">Hola {{nombre}}, sé que la planificación de regalos corporativos suele hacerse con anticipación. Si {{empresa}} tiene una fecha clave próxima (fin de año, aniversario, evento de cliente), con gusto le preparo una propuesta a tiempo. Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Disponible para su próxima ocasión</div><div class="body">Hola {{nombre}}, pauso el seguimiento por ahora para no ser inoportuno. Cuando tengan una ocasión donde un regalo con historia tenga sentido, aquí estaré. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Subject: Corporate gifts with story and purpose</div><div class="body">Hi {{nombre}}, I'm {{remitente}} from AWKI, premium Ecuadorian cacao. For corporate gifting, we offer something different from the traditional: authentic Ecuadorian origin, refined presentation, and a narrative that sets the giver apart — ideal for {{empresa}}'s clients, teams, or events. Do you have an upcoming date or event where this could make sense? Best, {{remitente}} — AWKI, Premium Ecuadorian Cacao.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Subject: Re: Corporate gifts with story and purpose</div><div class="body">Hi {{nombre}}, sharing volume-based options: from individual gifts to programs for dozens or hundreds of recipients, with room for customization. Would you like me to send the catalog with volume pricing? Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Subject: Thinking ahead to your next gifting season</div><div class="body">Hi {{nombre}}, I know corporate gifting is usually planned well in advance. If {{empresa}} has a key date coming up (year-end, an anniversary, a client event), I'd be glad to prepare a proposal in time. Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Subject: Available for your next occasion</div><div class="body">Hi {{nombre}}, I'll pause my follow-ups for now so as not to be a bother. Whenever you have an occasion where a gift with a story makes sense, I'll be here. Best, {{remitente}}.</div></div>
 
   <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI. Le escribí sobre regalos corporativos de cacao ecuatoriano premium para {{empresa}}. ¿Tienen alguna fecha próxima donde esto encaje?</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿pudo ver el catálogo de AWKI para regalos por volumen? Puedo ajustar la propuesta a la fecha que tengan en mente.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedo disponible para su próxima temporada de regalos corporativos. ¡Éxitos con {{empresa}}!</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hi {{nombre}}, this is {{remitente}} from AWKI. I wrote about corporate gifts made from premium Ecuadorian cacao for {{empresa}}. Do you have an upcoming date where this could fit?</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hi {{nombre}}, did you get a chance to see AWKI's volume gifting catalog? I can tailor the proposal to whatever date you have in mind.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hi {{nombre}}, I'll stay available for {{empresa}}'s next corporate gifting season. Best of luck!</div></div>
 
   <!-- AIRLINES -->
   <h3 class="sub">Aerolíneas premium — hub LAX (Oportunidad 2)</h3>
 
   <h4 class="sub2">Secuencia de Email</h4>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Asunto: Amenidad de cabina premium con narrativa de origen ecuatoriano</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI, cacao ecuatoriano premium con base en Los Ángeles. Le escribo porque creemos que nuestro producto podría encajar como amenidad de cabina premium o first class: origen auténtico, presentación refinada y una narrativa que añade valor a la experiencia de vuelo. ¿Sería usted la persona indicada para evaluar este tipo de propuestas dentro de {{empresa}}, o podría orientarme a quién dirigirme? Saludos, {{remitente}} — AWKI, Cacao ecuatoriano premium.</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Asunto: Re: Amenidad de cabina premium con narrativa de origen ecuatoriano</div><div class="body">Hola {{nombre}}, entiendo que este tipo de decisiones suele involucrar varios equipos. Si es de utilidad, puedo enviar una ficha técnica del producto y una muestra física para que la evalúen internamente. ¿Le sirve que la envíe esta semana? Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Asunto: Seguimiento — AWKI para {{empresa}}</div><div class="body">Hola {{nombre}}, quería confirmar si el material que envié llegó a la persona correcta dentro de {{empresa}}. Si prefiere que hable directamente con otro equipo (compras, experiencia de cliente), con gusto ajusto el contacto. Saludos, {{remitente}}.</div></div>
-  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Asunto: Quedamos disponibles para una futura evaluación</div><div class="body">Hola {{nombre}}, entiendo que este tipo de propuestas puede tomar tiempo en evaluarse o no ser prioridad ahora. Pauso el seguimiento activo, pero quedamos disponibles si en el futuro quieren evaluar AWKI como parte de su experiencia premium. Saludos, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 0</div><div class="subj">Subject: A premium cabin amenity with an Ecuadorian origin story</div><div class="body">Hi {{nombre}}, I'm {{remitente}} from AWKI, premium Ecuadorian cacao based in Los Angeles. I'm reaching out because we believe our product could work well as a premium or first-class cabin amenity: authentic origin, refined presentation, and a narrative that adds value to the flight experience. Would you be the right person to evaluate this kind of proposal at {{empresa}}, or could you point me to the right contact? Best, {{remitente}} — AWKI, Premium Ecuadorian Cacao.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 3</div><div class="subj">Subject: Re: A premium cabin amenity with an Ecuadorian origin story</div><div class="body">Hi {{nombre}}, I understand this type of decision usually involves several teams. If helpful, I can send a technical product sheet and a physical sample for internal review. Would this week work to send it over? Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 7</div><div class="subj">Subject: Following up — AWKI for {{empresa}}</div><div class="body">Hi {{nombre}}, wanted to confirm whether the materials I sent reached the right person at {{empresa}}. If you'd prefer I speak directly with another team (procurement, customer experience), I'm happy to redirect. Best, {{remitente}}.</div></div>
+  <div class="email-tpl"><div class="step">Touch 4 · Día 14</div><div class="subj">Subject: Staying available for a future evaluation</div><div class="body">Hi {{nombre}}, I understand this type of proposal can take time to evaluate, or may not be a priority right now. I'll pause active follow-up, but we remain available whenever you'd like to evaluate AWKI as part of your premium experience. Best, {{remitente}}.</div></div>
 
   <h4 class="sub2">Secuencia de SMS / WhatsApp</h4>
   <p class="note">Canal secundario y opcional para este segmento: procurement suele preferir email formal; usar SMS/WhatsApp solo si el contacto lo autorizó explícitamente.</p>
-  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hola {{nombre}}, soy {{remitente}} de AWKI. Le envié un correo sobre una posible amenidad de cabina premium para {{empresa}}. Quedo atento a sus comentarios.</div></div>
-  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hola {{nombre}}, ¿tuvo oportunidad de revisar la propuesta de AWKI? Puedo enviar más información si es útil.</div></div>
-  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hola {{nombre}}, quedamos disponibles para cuando {{empresa}} quiera evaluar este tipo de propuestas. Gracias por su tiempo.</div></div>
+  <div class="email-tpl"><div class="step">Touch 1 · Día 1</div><div class="body">Hi {{nombre}}, this is {{remitente}} from AWKI. I sent an email about a possible premium cabin amenity for {{empresa}}. I'll look forward to your thoughts.</div></div>
+  <div class="email-tpl"><div class="step">Touch 2 · Día 5</div><div class="body">Hi {{nombre}}, did you have a chance to review AWKI's proposal? Happy to send more information if useful.</div></div>
+  <div class="email-tpl"><div class="step">Touch 3 · Día 10</div><div class="body">Hi {{nombre}}, we'll remain available whenever {{empresa}} would like to evaluate this type of proposal. Thank you for your time.</div></div>
 </section>
 
-<!-- 05 -->
-<section id="s05">
-  <div class="sec-head"><span class="num">05</span><h2>Reunión Comercial y Modalidades de Pedido</h2></div>
+<!-- 06 -->
+<section id="s06">
+  <div class="sec-head"><span class="num">06</span><h2>Reunión Comercial y Modalidades de Pedido</h2></div>
   <p>La reunión comercial (30 minutos) confirma tres datos antes de proponer: aplicación real del producto en el negocio del prospecto, volumen estimado de consumo o reventa, y capacidad logística de recepción.</p>
 
   <h3 class="sub">La reunión releva tres datos</h3>
@@ -418,9 +571,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <div class="card"><span class="label">Principio rector</span>El Starter order funciona como gancho: reduce el riesgo percibido por el comprador y genera la primera señal real de rotación del producto antes de negociar condiciones de volumen. Ninguna condición de precio o exclusividad se ofrece a ciegas antes de la reunión: la propuesta se ajusta siempre a la aplicación y volumen confirmados en esa conversación.</div>
 </section>
 
-<!-- 06 -->
-<section id="s06" class="alt">
-  <div class="sec-head"><span class="num">06</span><h2>Objeciones Frecuentes</h2></div>
+<!-- 07 -->
+<section id="s07" class="alt">
+  <div class="sec-head"><span class="num">07</span><h2>Objeciones Frecuentes</h2></div>
 
   <div class="qa"><div class="q">¿Cuál es el pedido mínimo (MOQ)?</div><div class="a">El Starter order tiene un mínimo reducido pensado para prueba; los pedidos de volumen ajustan el mínimo según el segmento y la capacidad logística confirmada en la reunión.</div></div>
   <div class="qa"><div class="q">¿Ofrecen exclusividad de zona o de tienda?</div><div class="a">No en la fase de validación en Los Ángeles. La exclusividad se evalúa únicamente para cuentas con historial de recompra y volumen consistente.</div></div>
@@ -429,9 +582,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <div class="qa"><div class="q">Motivo de pérdida a vigilar</div><div class="a">"Precio" aparece con frecuencia como motivo declarado, pero en la mayoría de los casos encubre falta de fit real de segmento o ausencia de decisor confirmado. Todo Closed Lost debe registrar el motivo específico para distinguir precio real de fit débil.</div></div>
 </section>
 
-<!-- 07 -->
-<section id="s07">
-  <div class="sec-head"><span class="num">07</span><h2>HubSpot</h2></div>
+<!-- 08 -->
+<section id="s08">
+  <div class="sec-head"><span class="num">08</span><h2>HubSpot</h2></div>
 
   <h3 class="sub">Pipelines</h3>
   <p>"Ventas" (7 etapas, ver sección 03 — solo entran contactos SQL, calificados previamente como MQL en Apollo) y "Expansión de Cuentas" (7 etapas, gestionado por separado para reventa, upselling y cross-selling en cuentas con primer pedido confirmado).</p>
@@ -475,9 +628,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <div class="card"><span class="label">Alcance excluido en esta fase (Sales Starter)</span>Workflows avanzados, lead scoring automatizado, scoring de comportamiento, reportería BI avanzada, objetos personalizados, atribución multi-toque, cohortes automatizadas. La disciplina operativa manual (revisión semanal, tareas, vistas, plantillas) compensa estas limitaciones mientras se valida el mercado.</div>
 </section>
 
-<!-- 08 -->
-<section id="s08" class="alt">
-  <div class="sec-head"><span class="num">08</span><h2>KPIs Comerciales</h2></div>
+<!-- 09 -->
+<section id="s09" class="alt">
+  <div class="sec-head"><span class="num">09</span><h2>KPIs Comerciales</h2></div>
 
   <h3 class="sub">Tabla A — Funnel comercial (meta mensual, fase de validación en Los Ángeles)</h3>
   <table>
@@ -520,9 +673,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   </table>
 </section>
 
-<!-- 09 -->
-<section id="s09">
-  <div class="sec-head"><span class="num">09</span><h2>Roles y Cadencias</h2></div>
+<!-- 10 -->
+<section id="s10">
+  <div class="sec-head"><span class="num">10</span><h2>Roles y Cadencias</h2></div>
 
   <table>
     <thead><tr><th>Rol</th><th>Responsabilidad</th></tr></thead>
@@ -545,9 +698,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <p>Revisión de KPIs de funnel, calidad de cartera y salud del pipeline; ajuste de listas priorizadas en Apollo; decisión sobre expansión geográfica solo si conversión, ticket, recurrencia y capacidad logística en Los Ángeles están validados.</p>
 </section>
 
-<!-- 10 -->
-<section id="s10" class="alt">
-  <div class="sec-head"><span class="num">10</span><h2>Glosario</h2></div>
+<!-- 11 -->
+<section id="s11" class="alt">
+  <div class="sec-head"><span class="num">11</span><h2>Glosario</h2></div>
   <dl class="glossary">
     <dt>ICP (Ideal Customer Profile)</dt><dd>Perfil de cliente ideal definido por segmento, mercado, aplicación y decisor.</dd>
     <dt>MQL (Marketing Qualified Lead)</dt><dd>Contacto identificado y validado en Apollo con fit de ICP suficiente; todavía no es un negocio en HubSpot ni tiene la confirmación de un comercial.</dd>
