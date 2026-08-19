@@ -173,6 +173,17 @@ code{font-family:monospace;background:rgba(122,62,29,.08);color:var(--cacao);pad
 .chain{font-size:14px;line-height:1.9;background:rgba(122,62,29,.05);border:1px solid var(--line);border-radius:6px;padding:12px 16px;}
 .chain b{color:var(--cacao);}
 
+.time-badge{
+  display:inline-block;background:var(--ink);color:var(--gold);
+  font-family:Georgia,serif;font-weight:700;font-size:12px;letter-spacing:.4px;
+  padding:4px 12px;border-radius:20px;margin-bottom:8px;
+}
+.checklist{list-style:none;padding-left:0;margin:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:20px 22px;}
+.alt .checklist{background:var(--paper);}
+.checklist li{padding-left:30px;position:relative;margin-bottom:10px;font-size:14.5px;}
+.checklist li::before{content:"☐";position:absolute;left:0;top:-1px;color:var(--cacao);font-size:17px;}
+.checklist li:last-child{margin-bottom:0;}
+
 footer{
   background:var(--ink);color:var(--line);
   padding:40px 8vw;font-size:13px;text-align:center;
@@ -212,11 +223,12 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <a href="#s04"><span class="n">04</span> Listas de Apollo</a>
     <a href="#s05"><span class="n">05</span> Secuencias de Prospección</a>
     <a href="#s06"><span class="n">06</span> Reunión y Modalidades de Pedido</a>
-    <a href="#s07"><span class="n">07</span> Objeciones Frecuentes</a>
-    <a href="#s08"><span class="n">08</span> HubSpot</a>
-    <a href="#s09"><span class="n">09</span> KPIs Comerciales</a>
-    <a href="#s10"><span class="n">10</span> Roles y Cadencias</a>
-    <a href="#s11"><span class="n">11</span> Glosario</a>
+    <a href="#s07"><span class="n">07</span> Guía de Reunión Comercial de 15 Minutos</a>
+    <a href="#s08"><span class="n">08</span> Objeciones Frecuentes</a>
+    <a href="#s09"><span class="n">09</span> HubSpot</a>
+    <a href="#s10"><span class="n">10</span> KPIs Comerciales</a>
+    <a href="#s11"><span class="n">11</span> Roles y Cadencias</a>
+    <a href="#s12"><span class="n">12</span> Glosario</a>
   </div>
 </div>
 
@@ -345,7 +357,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <p>Cuando Apollo sincroniza una Company y un Contact, HubSpot los recibe con <code>Lifecycle Stage = Lead</code>. Es el mismo punto de entrada para leads de feria, inbound o referral. Ningún contacto entra ya calificado.</p>
 
   <h3 class="sub">Fase 2 — Manual ICP Qualification → MQL</h3>
-  <p>El comercial revisa manualmente el Lead en HubSpot (ver checklist de la sección 08), completa <code>AWKI ICP Score</code> y <code>AWKI ICP Fit</code>, y decide si el contacto pasa a <code>Lifecycle Stage = MQL</code>, permanece como Lead, o se descalifica (<code>AWKI Disqualification Reason</code>, ver sección 07).</p>
+  <p>El comercial revisa manualmente el Lead en HubSpot (ver checklist de la sección 09, y la guía de conversación en la sección 07), completa <code>AWKI ICP Score</code> y <code>AWKI ICP Fit</code>, y decide si el contacto pasa a <code>Lifecycle Stage = MQL</code>, permanece como Lead, o se descalifica (<code>AWKI Disqualification Reason</code>, ver sección 08).</p>
 
   <h3 class="sub">Fase 3 — Manual Sales Qualification → SQL</h3>
   <p>Un MQL pasa manualmente a SQL cuando el comercial confirma: <code>AWKI Segment</code>, <code>AWKI Market</code>, <code>AWKI ICP Fit</code>, <code>AWKI Clear Application = Yes</code>, <code>AWKI Decision Maker Identified = Yes</code>, y el <code>Contact Decision Level</code> identificado. El criterio central es siempre el mismo: <strong>Fit + Application + Decision Maker</strong>.</p>
@@ -369,7 +381,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <p class="note">Al llegar a Order Confirmed / Closed Won, el Contact y la Company pasan a <code>Lifecycle Stage = Customer</code>.</p>
 
   <h3 class="sub">Pipeline "Account Expansion" (7 etapas)</h3>
-  <p>Se activa exclusivamente para cuentas con primer pedido confirmado (<code>Lifecycle Stage = Customer</code>). Agrupa reventa (reposición), upselling (mayor volumen o línea premium) y cross-selling (nuevos productos), y se gestiona en un pipeline independiente de New Business para no distorsionar el funnel de nuevos clientes. Debido a las limitaciones de HubSpot Starter, la creación de este segundo Deal puede ser manual, apoyada por una tarea automática al confirmar el pedido (ver sección 08).</p>
+  <p>Se activa exclusivamente para cuentas con primer pedido confirmado (<code>Lifecycle Stage = Customer</code>). Agrupa reventa (reposición), upselling (mayor volumen o línea premium) y cross-selling (nuevos productos), y se gestiona en un pipeline independiente de New Business para no distorsionar el funnel de nuevos clientes. Debido a las limitaciones de HubSpot Starter, la creación de este segundo Deal puede ser manual, apoyada por una tarea automática al confirmar el pedido (ver sección 09).</p>
   <table>
     <thead><tr><th>Etapa</th><th>Probabilidad</th><th>Condición de avance</th></tr></thead>
     <tbody>
@@ -650,7 +662,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 <!-- 06 -->
 <section id="s06">
   <div class="sec-head"><span class="num">06</span><h2>Reunión Comercial y Modalidades de Pedido</h2></div>
-  <p>La reunión comercial (30 minutos) es lo que hace avanzar el Deal a la etapa <code>Meeting Completed</code> del pipeline Sales | New Business. Confirma tres datos antes de proponer: aplicación real del producto en el negocio del prospecto, volumen estimado de consumo o reventa, y capacidad logística de recepción.</p>
+  <p>La reunión comercial (15 minutos) es lo que hace avanzar el Deal a la etapa <code>Meeting Completed</code> del pipeline Sales | New Business. Confirma tres datos antes de proponer: aplicación real del producto en el negocio del prospecto, volumen estimado de consumo o reventa, y capacidad logística de recepción.</p>
 
   <h3 class="sub">La reunión releva tres datos</h3>
   <ol>
@@ -658,7 +670,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <li>Volumen estimado y frecuencia esperada</li>
     <li>Capacidad logística (recepción, almacenamiento, mínimos de pedido)</li>
   </ol>
-  <p class="note">Al cerrar la reunión, el comercial debe registrar en el Deal: <code>AWKI Application</code>, <code>AWKI Expected Frequency</code>, <code>AWKI Purchase Capacity</code>, Estimated Quantity y Next Step (ver checklist por etapa en la sección 08).</p>
+  <p class="note">Al cerrar la reunión, el comercial debe registrar en el Deal: <code>AWKI Application</code>, <code>AWKI Expected Frequency</code>, <code>AWKI Purchase Capacity</code>, Estimated Quantity y Next Step (ver checklist por etapa en la sección 09).</p>
 
   <h3 class="sub">Modalidades de pedido</h3>
   <table>
@@ -671,17 +683,123 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   </table>
 
   <div class="card"><span class="label">Principio rector</span>El Starter order funciona como gancho: reduce el riesgo percibido por el comprador y genera la primera señal real de rotación del producto antes de negociar condiciones de volumen. Ninguna condición de precio o exclusividad se ofrece a ciegas antes de la reunión: la propuesta se ajusta siempre a la aplicación y volumen confirmados en esa conversación.</div>
+  <p class="note">¿Cómo se conduce esa primera reunión minuto a minuto? Ver la guía completa en la sección 07.</p>
 </section>
 
 <!-- 07 -->
-<section id="s07" class="alt">
-  <div class="sec-head"><span class="num">07</span><h2>Objeciones Frecuentes</h2></div>
+<section id="s07">
+  <div class="sec-head"><span class="num">07</span><h2>Guía de Reunión Comercial de 15 Minutos</h2></div>
+  <p>Manual práctico para la asesora comercial cuando tiene una primera reunión agendada con un prospecto proveniente de Apollo. Se mantiene la lógica general del playbook: <strong>Apollo prospecta, HubSpot califica</strong>, la calificación es siempre manual, y los objetos Company y Contact se evalúan por separado. Esta guía todavía no se mezcla con las etapas del pipeline de Deals (sección 03/09) — su objetivo es completar o validar el <code>AWKI ICP Score</code>, el <code>AWKI ICP Fit</code> (Company Fit) y la calificación del Contact que, más adelante, permiten decidir manualmente el paso de MQL a SQL.</p>
+
+  <div class="card"><span class="label">Principio de la reunión</span>No convertir la primera reunión en un interrogatorio de calificación. El prospecto aceptó la reunión porque quiere entender qué es AWKI USA y qué productos ofrece — la conversación debe comenzar dando contexto y generando interés.</div>
+  <p class="chain">La lógica de los 15 minutos: <b>Presentar brevemente</b> → <b>descubrir</b> → <b>calificar</b> → <b>presentar valor relevante</b> → <b>acordar siguiente paso</b>.</p>
+  <p>La presentación inicial de AWKI debe ser breve. La presentación comercial más profunda se hace después de entender al cliente, para poder conectar los productos y la propuesta de valor con sus necesidades reales.</p>
+
+  <h3 class="sub"><span class="time-badge">Minutos 0–2</span><br>1 · Apertura y presentación de AWKI USA</h3>
+  <p><strong>Objetivo:</strong> que el prospecto entienda rápidamente quién es AWKI USA y por qué puede ser relevante para su negocio. Debe durar aproximadamente 1–2 minutos — evitar presentar todavía el catálogo completo o dar una explicación extensa.</p>
+  <ul>
+    <li>Presentarse.</li>
+    <li>Agradecer el tiempo.</li>
+    <li>Explicar brevemente qué es AWKI USA.</li>
+    <li>Explicar qué tipo de chocolates/productos comercializa.</li>
+    <li>Comunicar en términos simples la propuesta de valor.</li>
+  </ul>
+  <div class="email-tpl"><div class="step">Ejemplo de pitch inicial (30–45 segundos)</div><div class="body">"Hola {{nombre}}, gracias por el tiempo. Te cuento brevemente quiénes somos: AWKI es una marca de cacao ecuatoriano premium — trabajamos chocolate y productos de cacao con origen auténtico, pensados para ir más allá del chocolate tradicional: retail especializado, experiencias de bienestar, hospitality y regalos corporativos, dependiendo del negocio. Antes de mostrarte producto, me encantaría entender un poco mejor tu negocio para enfocarme en lo que realmente te sirve — ¿te parece?"</div></div>
+
+  <h3 class="sub"><span class="time-badge">Minutos 2–7</span><br>2 · Descubrimiento y calificación de la Company</h3>
+  <p><strong>Objetivo:</strong> entender el negocio y validar la información necesaria para determinar si la empresa corresponde al ICP de AWKI USA. La conversación debe sentirse natural, no un cuestionario.</p>
+  <table>
+    <thead><tr><th>Qué descubrir / validar</th><th>Propiedad de Company en HubSpot</th></tr></thead>
+    <tbody>
+      <tr><td>Tipo de negocio</td><td><code>AWKI Segment</code> / <code>AWKI Subsegment</code></td></tr>
+      <tr><td>Canal comercial</td><td><code>AWKI Acquisition Channel</code></td></tr>
+      <tr><td>Ubicación / mercado</td><td><code>AWKI Market</code></td></tr>
+      <tr><td>Tipo de productos que comercializa actualmente</td><td><code>AWKI Premium Products</code></td></tr>
+      <tr><td>Si vende chocolates o productos relacionados</td><td><code>AWKI Clear Application</code></td></tr>
+      <tr><td>Cómo maneja actualmente esa categoría</td><td><code>AWKI Application</code></td></tr>
+      <tr><td>Tipo de cliente al que atiende</td><td><code>AWKI Segment</code> / <code>AWKI Subsegment</code></td></tr>
+      <tr><td>Tamaño o potencial comercial</td><td><code>AWKI Number of Locations</code>, <code>AWKI Monthly Potential</code>, <code>AWKI Purchase Capacity</code></td></tr>
+      <tr><td>Necesidades relevantes</td><td><code>AWKI Application</code> / <code>AWKI Clear Application</code></td></tr>
+      <tr><td>Relación actual con proveedores</td><td>Contexto cualitativo — no se guarda en una propiedad específica, pero ayuda a interpretar el <code>AWKI ICP Fit</code></td></tr>
+      <tr><td>Potencial de incorporación de productos AWKI</td><td><code>AWKI Clear Application</code>, <code>AWKI Monthly Potential</code></td></tr>
+    </tbody>
+  </table>
+  <p>Al finalizar esta parte, la asesora debe contar con información suficiente para confirmar o ajustar: <code>AWKI ICP Score</code> → <code>AWKI ICP Fit</code> (Company Fit) → estado de calificación de la Company.</p>
+  <div class="two-col">
+    <div class="tier"><span class="tier-label">AWKI ICP Score</span>Evaluación objetiva respecto al perfil de cliente ideal — la suma manual de los seis criterios ya definidos en la sección 02 (Priority Segment, Priority Market, Premium Products, Physical Store/Active Community, Clear Application, Decision Maker Identified).</div>
+    <div class="tier"><span class="tier-label">AWKI ICP Fit (Company Fit)</span>Interpretación comercial del grado de encaje de esa empresa con AWKI USA (A — High Fit, B — Good Fit / Lower Immediate Intent, C — Incomplete / Medium Fit). No es lo mismo que el score: dos empresas con score similar pueden merecer un Fit distinto según el juicio comercial de la asesora.</div>
+  </div>
+
+  <h3 class="sub"><span class="time-badge">Minutos 7–10</span><br>3 · Calificación del Contact</h3>
+  <p><strong>Objetivo:</strong> determinar qué tan relevante es la persona con la que se está conversando dentro del proceso de compra. La calificación de la persona se mantiene independiente de la calificación de la empresa.</p>
+  <table>
+    <thead><tr><th>Qué validar (conversacional)</th><th>Propiedad de Contact en HubSpot</th></tr></thead>
+    <tbody>
+      <tr><td>Cargo</td><td>Job Title</td></tr>
+      <tr><td>Función dentro de la empresa</td><td><code>AWKI Function</code></td></tr>
+      <tr><td>Relación con la categoría/producto</td><td><code>AWKI Product Interest</code></td></tr>
+      <tr><td>Participación en decisiones de compra / capacidad de decisión</td><td><code>AWKI Decision Level</code></td></tr>
+      <tr><td>Si es decisor, influencer, gatekeeper o debe conducir al decisor</td><td><code>AWKI Decision Level</code> (Decision Maker / Influencer / Gatekeeper / User / Unknown)</td></tr>
+      <tr><td>Nivel de interés demostrado</td><td><code>AWKI Interest Level</code></td></tr>
+      <tr><td>Productos o categorías que despiertan mayor interés</td><td><code>AWKI Product Interest</code></td></tr>
+      <tr><td>Disposición a continuar la conversación comercial</td><td><code>AWKI Last Outcome</code> / <code>AWKI Commercial Priority</code></td></tr>
+    </tbody>
+  </table>
+  <div class="card"><span class="label">Company ≠ Contact</span>Una buena Company puede tener un Contact incorrecto, y un Contact interesado puede pertenecer a una Company con bajo Fit. La asesora debe poder distinguir claramente ambas situaciones y no promediar una calificación con la otra.</div>
+
+  <h3 class="sub"><span class="time-badge">Minutos 10–13</span><br>4 · Presentación de valor contextualizada</h3>
+  <p><strong>Objetivo:</strong> presentar AWKI en función de lo descubierto durante la conversación — no repetir una presentación comercial estándar. El objetivo no es mostrar todo el catálogo, sino los productos o argumentos con mayor relevancia para ese prospecto.</p>
+  <ul>
+    <li>Productos relevantes.</li>
+    <li>Diferenciadores.</li>
+    <li>Origen/calidad del chocolate cuando corresponda.</li>
+    <li>Presentaciones relevantes.</li>
+    <li>Aplicaciones comerciales.</li>
+    <li>Beneficios para el negocio.</li>
+    <li>Argumentos de valor específicos para ese prospecto.</li>
+  </ul>
+  <div class="email-tpl"><div class="step">Frase de conexión (ejemplo)</div><div class="body">"Por lo que me comentas sobre {{necesidad o contexto descubierto}}, creo que tendría sentido mostrarte {{producto o línea relevante}}…"</div></div>
+
+  <h3 class="sub"><span class="time-badge">Minutos 13–15</span><br>5 · Cierre y siguiente paso</h3>
+  <p>Toda reunión debe terminar con un siguiente paso concreto, confirmado verbalmente antes de finalizar. Según el resultado de la conversación, puede ser:</p>
+  <ul class="taglist">
+    <li><code>Enviar catálogo / información específica</code></li>
+    <li><code>Enviar selección de productos</code></li>
+    <li><code>Enviar muestras</code></li>
+    <li><code>Conseguir contacto con el decisor</code></li>
+    <li><code>Agendar segunda conversación</code></li>
+    <li><code>Analizar requerimiento</code></li>
+    <li><code>Preparar propuesta comercial</code></li>
+    <li><code>Descartar / mantener en seguimiento</code></li>
+  </ul>
+  <p class="note">Después de la reunión, la asesora debe actualizar en HubSpot la información obtenida de Company y Contact, y registrar la próxima acción en <code>AWKI Next Step</code> + <code>AWKI Next Step Date</code>.</p>
+
+  <h3 class="sub">Antes de cerrar la reunión, ¿tengo claro esto?</h3>
+  <ul class="checklist">
+    <li>¿Entendí qué hace la empresa?</li>
+    <li>¿Entendí cómo encaja el chocolate/producto dentro de su negocio?</li>
+    <li>¿Tengo suficiente información para validar el ICP Score?</li>
+    <li>¿Puedo determinar el Company Fit?</li>
+    <li>¿Sé qué rol tiene mi contacto?</li>
+    <li>¿Sé si decide, influye o debe conectarme con otra persona?</li>
+    <li>¿Identifiqué interés o necesidad?</li>
+    <li>¿Presenté los productos de AWKI relevantes para esa necesidad?</li>
+    <li>¿Acordamos un siguiente paso concreto?</li>
+    <li>¿Sé qué información debo actualizar en HubSpot?</li>
+  </ul>
+
+  <div class="card"><span class="label">Regla operativa</span>La reunión de 15 minutos no es cinco bloques rígidos ni un cuestionario: debe sentirse como una conversación comercial natural. La estructura es una guía para garantizar que, al finalizar, la asesora haya conseguido tres resultados: (1) el prospecto entiende AWKI y encuentra una razón para interesarse; (2) AWKI entiende y califica correctamente tanto a la Company como al Contact; (3) existe un siguiente paso comercial claro.</div>
+</section>
+
+<!-- 08 -->
+<section id="s08" class="alt">
+  <div class="sec-head"><span class="num">08</span><h2>Objeciones Frecuentes</h2></div>
 
   <div class="qa"><div class="q">¿Cuál es el pedido mínimo (MOQ)?</div><div class="a">El Starter order tiene un mínimo reducido pensado para prueba; los pedidos de volumen ajustan el mínimo según el segmento y la capacidad logística confirmada en la reunión.</div></div>
   <div class="qa"><div class="q">¿Ofrecen exclusividad de zona o de tienda?</div><div class="a">No en la fase de validación en Los Ángeles. La exclusividad se evalúa únicamente para cuentas con historial de recompra y volumen consistente.</div></div>
   <div class="qa"><div class="q">¿Qué pasa si el producto no rota como esperado?</div><div class="a">Se revisa junto al comprador la exhibición, el punto de venta y la narrativa usada; el ajuste de modalidad o de mix de producto se decide en la reunión de seguimiento, no de forma unilateral.</div></div>
   <div class="qa"><div class="q">¿Hacen consignación o solo venta directa?</div><div class="a">El modelo actual es venta directa (wholesale); la consignación no forma parte del alcance de esta fase y se evalúa solo como excepción justificada.</div></div>
-  <div class="qa"><div class="q">Motivo de pérdida a vigilar</div><div class="a">"Precio" aparece con frecuencia como motivo declarado, pero en la mayoría de los casos encubre falta de fit real de segmento o ausencia de decisor confirmado. Todo Closed Lost debe registrar <code>AWKI Lost Reason</code> con el motivo específico para distinguir precio real de fit débil (lista completa en la sección 08).</div></div>
+  <div class="qa"><div class="q">Motivo de pérdida a vigilar</div><div class="a">"Precio" aparece con frecuencia como motivo declarado, pero en la mayoría de los casos encubre falta de fit real de segmento o ausencia de decisor confirmado. Todo Closed Lost debe registrar <code>AWKI Lost Reason</code> con el motivo específico para distinguir precio real de fit débil (lista completa en la sección 09).</div></div>
 
   <h3 class="sub">Razones de descalificación (antes de crear un Deal)</h3>
   <p>No confundir con <code>AWKI Lost Reason</code>: <code>AWKI Disqualification Reason</code> se usa antes de que exista un Deal, durante la revisión manual de un Lead o MQL en HubSpot.</p>
@@ -699,9 +817,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   </ul>
 </section>
 
-<!-- 08 -->
-<section id="s08">
-  <div class="sec-head"><span class="num">08</span><h2>HubSpot</h2></div>
+<!-- 09 -->
+<section id="s09">
+  <div class="sec-head"><span class="num">09</span><h2>HubSpot</h2></div>
   <p>HubSpot Sales Hub Starter es el CRM central y la única fuente de verdad comercial: repositorio de contactos y empresas, sistema de calificación manual, y sistema para crear y administrar Deals, ventas, clientes, recompra, upselling y cross-selling. Apollo nunca escribe directamente un Lifecycle Stage distinto de Lead, ni crea Deals.</p>
 
   <h3 class="sub">Pipelines (máximo 2, límite de Starter)</h3>
@@ -725,7 +843,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <ul class="taglist">
     <li><code>Price</code></li><li><code>No Product Fit</code></li><li><code>No Decision Maker</code></li><li><code>Timing</code></li><li><code>No Budget</code></li><li><code>No Response</code></li><li><code>Logistics</code></li><li><code>MOQ</code></li><li><code>Competitor</code></li><li><code>Internal Decision</code></li><li><code>Other</code></li>
   </ul>
-  <p class="note">Revisar con cuidado la razón <code>Price</code>: con frecuencia esconde problemas de fit, de decisor o de propuesta de valor, no un problema real de precio (ver sección 07).</p>
+  <p class="note">Revisar con cuidado la razón <code>Price</code>: con frecuencia esconde problemas de fit, de decisor o de propuesta de valor, no un problema real de precio (ver sección 08).</p>
 
   <h3 class="sub">Propiedades de Company</h3>
   <div class="prop-group">
@@ -845,9 +963,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   </div>
 </section>
 
-<!-- 09 -->
-<section id="s09" class="alt">
-  <div class="sec-head"><span class="num">09</span><h2>KPIs Comerciales</h2></div>
+<!-- 10 -->
+<section id="s10" class="alt">
+  <div class="sec-head"><span class="num">10</span><h2>KPIs Comerciales</h2></div>
 
   <h3 class="sub">Tabla A — Funnel de Prospecting &amp; Qualification (meta mensual, fase de validación en Los Ángeles)</h3>
   <table>
@@ -914,9 +1032,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <p class="note">Diseñado dentro de las limitaciones de reporting de HubSpot Sales Hub Starter: ningún reporte de este dashboard requiere el Custom Report Builder de Professional.</p>
 </section>
 
-<!-- 10 -->
-<section id="s10">
-  <div class="sec-head"><span class="num">10</span><h2>Roles y Cadencias</h2></div>
+<!-- 11 -->
+<section id="s11">
+  <div class="sec-head"><span class="num">11</span><h2>Roles y Cadencias</h2></div>
 
   <table>
     <thead><tr><th>Rol</th><th>Responsabilidad</th></tr></thead>
@@ -940,9 +1058,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <p>Revisión de KPIs de funnel, calidad de cartera y salud del pipeline; ajuste de listas priorizadas en Apollo; decisión sobre expansión geográfica solo si conversión, ticket, recurrencia y capacidad logística en Los Ángeles están validados.</p>
 </section>
 
-<!-- 11 -->
-<section id="s11" class="alt">
-  <div class="sec-head"><span class="num">11</span><h2>Glosario</h2></div>
+<!-- 12 -->
+<section id="s12" class="alt">
+  <div class="sec-head"><span class="num">12</span><h2>Glosario</h2></div>
   <dl class="glossary">
     <dt>ICP (Ideal Customer Profile)</dt><dd>Perfil de cliente ideal definido por segmento, mercado, aplicación y decisor.</dd>
     <dt>Lead</dt><dd>Prospecto proveniente de Apollo, feria, inbound, referral u otra fuente que todavía no ha sido calificado. Es el Lifecycle Stage inicial de todo contacto en HubSpot, sin excepción.</dd>
