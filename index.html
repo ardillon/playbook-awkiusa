@@ -359,11 +359,80 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <h3 class="sub">Fase 2 — Manual ICP Qualification → MQL</h3>
   <p>El comercial revisa manualmente el Lead en HubSpot (ver checklist de la sección 09, y la guía de conversación en la sección 07), completa <code>AWKI ICP Score</code> y <code>AWKI ICP Fit</code>, y decide si el contacto pasa a <code>Lifecycle Stage = MQL</code>, permanece como Lead, o se descalifica (<code>AWKI Disqualification Reason</code>, ver sección 08).</p>
 
+  <p>Propiedades de <strong>Company</strong> que la asesora debe revisar y completar para tomar esta decisión:</p>
+  <div class="prop-group">
+    <span class="pg-title">AWKI | ICP &amp; Account Qualification</span>
+    <table>
+      <thead><tr><th>Propiedad</th><th>Tipo</th><th>Uso comercial / Valores</th></tr></thead>
+      <tbody>
+        <tr><td><code>AWKI Account Status</code></td><td>Dropdown</td><td>Estado de la cuenta en el proceso comercial — Prospect, Qualification Pending, Qualified, Customer, Active Customer, Inactive, Disqualified</td></tr>
+        <tr><td><code>AWKI Segment</code></td><td>Dropdown</td><td>Segmento principal del ICP; define propuesta de valor y secuencia de prospección — Retail, Wellness, Hospitality, Corporate Gifting, Airlines</td></tr>
+        <tr><td><code>AWKI Subsegment</code></td><td>Dropdown</td><td>Detalle del tipo de negocio dentro del segmento, ej. Retail: Specialty Grocery, Gourmet Market, Natural Foods, Chocolate Store; Wellness: Yoga Studio, Retreat Center, Meditation Center, Spa; Hospitality: Boutique Hotel, Luxury Hotel, Resort, Specialty Cafe</td></tr>
+        <tr><td><code>AWKI Market</code></td><td>Dropdown</td><td>Mercado geográfico donde opera la cuenta — Los Angeles, Greater Los Angeles Area, California Other, Other US Market</td></tr>
+        <tr><td><code>AWKI Number of Locations</code></td><td>Número</td><td>Cantidad de ubicaciones físicas; ayuda a estimar potencial de distribución y capacidad de compra</td></tr>
+        <tr><td><code>AWKI Acquisition Channel</code></td><td>Dropdown</td><td>Canal por el que se identificó la cuenta — Apollo, Feria, Farmer Market, Inbound, Referral</td></tr>
+        <tr><td><code>AWKI Event</code></td><td>Texto</td><td>Evento específico donde fue captada la empresa, ej. Expo XYZ, Farmer Market Santa Monica</td></tr>
+        <tr><td><code>AWKI Apollo List</code></td><td>Dropdown</td><td>Lista de Apollo de origen de la cuenta (ver sección 04) — AWKI | LA | Retail | Buyers &amp; Owners, AWKI | LA | Wellness | Owners &amp; Programs, AWKI | LA | Hospitality | GM &amp; F&amp;B, AWKI | LA | Corporate Gifting | Events &amp; HR, AWKI | LAX | Airlines | Procurement</td></tr>
+        <tr><td><code>AWKI Priority Segment</code></td><td>Sí/No</td><td>Pertenece a un segmento prioritario — suma 20 pts en <code>AWKI ICP Score</code></td></tr>
+        <tr><td><code>AWKI Priority Market</code></td><td>Sí/No</td><td>Pertenece al mercado geográfico prioritario — suma 10 pts en <code>AWKI ICP Score</code></td></tr>
+        <tr><td><code>AWKI Premium Products</code></td><td>Sí/No</td><td>Ya comercializa productos premium, gourmet o naturales afines al posicionamiento AWKI — suma 10 pts en <code>AWKI ICP Score</code></td></tr>
+        <tr><td><code>AWKI Physical Store / Active Community</code></td><td>Sí/No</td><td>Posee tienda física o comunidad activa donde generar venta o experiencia — suma 10 pts en <code>AWKI ICP Score</code></td></tr>
+        <tr><td><code>AWKI Clear Application</code></td><td>Sí/No</td><td>Existe una aplicación clara del producto (venta retail, regalo corporativo, amenity, experiencia wellness) — suma 15 pts en <code>AWKI ICP Score</code></td></tr>
+        <tr><td><code>AWKI Decision Maker Identified</code></td><td>Sí/No</td><td>Existe un decisor comercial identificado dentro de la empresa — suma 15 pts en <code>AWKI ICP Score</code></td></tr>
+        <tr><td><code>AWKI ICP Score</code></td><td>Número (máx. 80)</td><td>Suma manual de los seis criterios anteriores (ver sección 02)</td></tr>
+        <tr><td><code>AWKI ICP Fit</code></td><td>Dropdown</td><td>Clasificación comercial final del ajuste de la cuenta — A: High Fit · B: Good Fit / Lower Immediate Intent · C: Incomplete / Medium Fit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h3 class="sub">Fase 3 — Manual Sales Qualification → SQL</h3>
   <p>Un MQL pasa manualmente a SQL cuando el comercial confirma: <code>AWKI Segment</code>, <code>AWKI Market</code>, <code>AWKI ICP Fit</code>, <code>AWKI Clear Application = Yes</code>, <code>AWKI Decision Maker Identified = Yes</code>, y el <code>Contact Decision Level</code> identificado. El criterio central es siempre el mismo: <strong>Fit + Application + Decision Maker</strong>.</p>
 
+  <p>Propiedades de <strong>Contact</strong> que sustentan esa confirmación (ver también la calificación del Contact en la sección 07):</p>
+  <div class="prop-group">
+    <span class="pg-title">AWKI | Contact Qualification</span>
+    <table>
+      <thead><tr><th>Propiedad</th><th>Tipo</th><th>Uso comercial / Valores</th></tr></thead>
+      <tbody>
+        <tr><td>Job Title</td><td>Texto</td><td>Cargo del contacto dentro de la empresa</td></tr>
+        <tr><td><code>AWKI Function</code></td><td>Dropdown</td><td>Función principal del contacto — Founder / Owner, Buyer, Procurement, Store Manager, General Manager, F&amp;B, Operations, Program Director, HR, Events, Merchandising, Other</td></tr>
+        <tr><td><code>AWKI Decision Level</code></td><td>Dropdown</td><td>Nivel de influencia del contacto en el proceso de compra — Decision Maker, Influencer, Gatekeeper, User, Unknown</td></tr>
+        <tr><td><code>AWKI Language</code></td><td>Dropdown</td><td>Idioma preferido para comunicación comercial — English, Spanish, Other</td></tr>
+        <tr><td><code>AWKI Interest Level</code></td><td>Dropdown</td><td>Nivel de interés demostrado por el contacto — High, Medium, Low, Unknown</td></tr>
+        <tr><td><code>AWKI Product Interest</code></td><td>Dropdown</td><td>Producto o aplicación que genera interés — Retail Products, Wellness Experience, Corporate Gifts, Hospitality, Samples, Wholesale, Other</td></tr>
+        <tr><td><code>AWKI Commercial Priority</code></td><td>Dropdown</td><td>Prioridad comercial asignada al contacto — High, Medium, Low</td></tr>
+        <tr><td><code>AWKI Last Outcome</code></td><td>Dropdown</td><td>Último resultado registrado tras una interacción comercial — Contacted, Replied, Meeting Scheduled, Meeting Completed, Interested, Not Interested, No Response</td></tr>
+        <tr><td><code>AWKI Next Step</code></td><td>Dropdown</td><td>Próxima acción comercial pendiente — Send Information, Send Sample, Schedule Meeting, Follow Up, Contact Decision Maker, Nurture, Close</td></tr>
+        <tr><td><code>AWKI Next Step Date</code></td><td>Fecha</td><td>Fecha comprometida para ejecutar la siguiente acción</td></tr>
+        <tr><td><code>AWKI Commercial Consent</code></td><td>Sí/No</td><td>Indica si el contacto autorizó comunicaciones comerciales</td></tr>
+        <tr><td><code>AWKI Disqualification Reason</code></td><td>Dropdown</td><td>Motivo por el que el contacto no continúa antes de crear el Deal (ver sección 08) — Outside Target Market, Wrong Segment, No Clear Application, No Decision Maker, Insufficient Information, No Interest, Bad Timing, No Budget, Duplicate, Other</td></tr>
+        <tr><td><code>AWKI Apollo List</code></td><td>Dropdown</td><td>Lista de Apollo desde donde fue capturado el contacto (ver sección 04)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h3 class="sub">Fase 4 — Create Deal → Opportunity</h3>
   <p>El Deal se crea únicamente cuando el contacto alcanza <code>Lifecycle Stage = SQL</code>. No se crean Deals para todos los contactos que llegan de Apollo, y el pipeline de Deals nunca se usa como herramienta de prospección. Al crear el primer Deal, el Contact y la Company asociados pasan a <code>Lifecycle Stage = Opportunity</code>.</p>
+
+  <p>Propiedades de <strong>Deal</strong> a completar desde la creación de la Opportunity:</p>
+  <div class="prop-group">
+    <span class="pg-title">AWKI | Opportunity</span>
+    <table>
+      <thead><tr><th>Propiedad</th><th>Tipo</th><th>Uso comercial / Valores</th></tr></thead>
+      <tbody>
+        <tr><td><code>AWKI Opportunity Type</code></td><td>Dropdown</td><td>Tipo de oportunidad comercial — New Business, Account Expansion</td></tr>
+        <tr><td><code>AWKI Opportunity Subtype</code></td><td>Dropdown</td><td>Modalidad específica del negocio (ver sección 06) — Starter Order, Wholesale, Reorder, Upsell, Cross-sell</td></tr>
+        <tr><td><code>AWKI Application</code></td><td>Dropdown</td><td>Uso específico del producto en esta oportunidad — Retail / Shelf, Ritual / Experience, Amenity, Gift, Corporate Gift, Hospitality, Airline Amenity, Other</td></tr>
+        <tr><td><code>AWKI Expected Frequency</code></td><td>Dropdown</td><td>Frecuencia esperada de compra asociada al negocio — Monthly, Quarterly, Seasonal, Annual, One Time</td></tr>
+        <tr><td><code>AWKI Next Step</code></td><td>Dropdown</td><td>Próxima actividad requerida para avanzar la oportunidad</td></tr>
+        <tr><td><code>AWKI Next Step Date</code></td><td>Fecha</td><td>Fecha comprometida para la próxima acción comercial</td></tr>
+        <tr><td><code>AWKI Objection</code></td><td>Dropdown</td><td>Objeción principal identificada durante la negociación (ver sección 08) — Price, MOQ, Timing, Logistics, Product Fit, Internal Approval, Other</td></tr>
+        <tr><td><code>AWKI Lost Reason</code></td><td>Dropdown</td><td>Motivo del cierre perdido de la oportunidad — Price, No Product Fit, No Decision Maker, Timing, No Budget, No Response, Logistics, MOQ, Competitor, Internal Decision, Other</td></tr>
+        <tr><td><code>AWKI Acquisition Channel</code></td><td>Dropdown</td><td>Canal que originó la oportunidad comercial — Apollo, Feria, Farmer Market, Inbound, Referral</td></tr>
+        <tr><td><code>AWKI Reorder Date</code></td><td>Fecha</td><td>Fecha estimada para recompra asociada a una oportunidad de expansión</td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <h3 class="sub">Fase 5 — Pipeline "Sales | New Business" (7 etapas)</h3>
   <table>
@@ -379,6 +448,23 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     </tbody>
   </table>
   <p class="note">Al llegar a Order Confirmed / Closed Won, el Contact y la Company pasan a <code>Lifecycle Stage = Customer</code>.</p>
+
+  <p>Propiedades de <strong>Company</strong> que se completan durante la reunión (etapa Meeting Completed) y el seguimiento posterior, y que luego sostienen el paso a Account Expansion:</p>
+  <div class="prop-group">
+    <span class="pg-title">AWKI | Commercial Potential</span>
+    <table>
+      <thead><tr><th>Propiedad</th><th>Tipo</th><th>Uso comercial / Valores</th></tr></thead>
+      <tbody>
+        <tr><td><code>AWKI Application</code></td><td>Dropdown</td><td>Cómo utilizaría la empresa los productos AWKI — Retail / Shelf, Ritual / Experience, Amenity, Gift, Corporate Gift, Hospitality, Airline Amenity, Other</td></tr>
+        <tr><td><code>AWKI Purchase Capacity</code></td><td>Dropdown</td><td>Estimación de capacidad potencial de compra</td></tr>
+        <tr><td><code>AWKI Expected Frequency</code></td><td>Dropdown</td><td>Frecuencia esperada de compra — Monthly, Quarterly, Seasonal, Annual, One Time</td></tr>
+        <tr><td><code>AWKI Monthly Potential</code></td><td>Moneda</td><td>Estimación del potencial mensual de compra</td></tr>
+        <tr><td><code>AWKI First Purchase Date</code></td><td>Fecha</td><td>Fecha del primer pedido confirmado</td></tr>
+        <tr><td><code>AWKI Last Purchase Date</code></td><td>Fecha</td><td>Fecha de última compra registrada</td></tr>
+        <tr><td><code>AWKI Next Reorder Date</code></td><td>Fecha</td><td>Fecha estimada para la siguiente reposición — dispara la etapa Reorder Scheduled &amp; Contacted en Account Expansion</td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <h3 class="sub">Pipeline "Account Expansion" (7 etapas)</h3>
   <p>Se activa exclusivamente para cuentas con primer pedido confirmado (<code>Lifecycle Stage = Customer</code>). Agrupa reventa (reposición), upselling (mayor volumen o línea premium) y cross-selling (nuevos productos), y se gestiona en un pipeline independiente de New Business para no distorsionar el funnel de nuevos clientes. Debido a las limitaciones de HubSpot Starter, la creación de este segundo Deal puede ser manual, apoyada por una tarea automática al confirmar el pedido (ver sección 09).</p>
