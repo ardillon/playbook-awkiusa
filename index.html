@@ -70,18 +70,29 @@ a{color:var(--cacao);}
 }
 .print-btn:hover{background:var(--cacao-light);}
 
-/* ---------- Index ---------- */
-.index-wrap{background:var(--cream);padding:36px 8vw 44px;}
-.index-wrap h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cacao);margin-bottom:18px;font-family:Georgia,serif;}
-.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;}
+/* ---------- Index (sidebar fijo a la izquierda) ---------- */
+.content{margin-left:272px;}
+.index-wrap{
+  position:fixed;top:0;left:0;bottom:0;width:272px;
+  background:var(--cream);border-right:1px solid var(--line);
+  padding:28px 22px;overflow-y:auto;z-index:40;
+}
+.index-wrap h2{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--cacao);margin-bottom:16px;font-family:Georgia,serif;}
+.index-grid{display:flex;flex-direction:column;gap:6px;}
 .index-grid a{
   display:flex;align-items:baseline;gap:10px;
   text-decoration:none;color:var(--ink);
   background:var(--paper);border:1px solid var(--line);border-radius:4px;
-  padding:12px 14px;font-size:14px;transition:.15s;
+  padding:10px 12px;font-size:13.5px;transition:.15s;line-height:1.3;
 }
 .index-grid a:hover{border-color:var(--cacao);}
-.index-grid .n{font-family:Georgia,serif;font-weight:700;color:var(--cacao);font-size:13px;}
+.index-grid a.active{border-color:var(--cacao);background:rgba(122,62,29,.08);}
+.index-grid .n{font-family:Georgia,serif;font-weight:700;color:var(--cacao);font-size:13px;flex:none;}
+@media (max-width:900px){
+  .index-wrap{position:static;width:auto;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:24px 8vw 30px;}
+  .index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;}
+  .content{margin-left:0;}
+}
 
 /* ---------- Sections ---------- */
 section{padding:54px 8vw;border-bottom:1px solid var(--line);scroll-margin-top:20px;}
@@ -192,6 +203,8 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 
 @media print{
   .print-btn{display:none;}
+  .index-wrap{display:none;}
+  .content{margin-left:0;}
   section{page-break-inside:avoid;padding:24px 6vw;}
   .cover{padding:30px 6vw;}
 }
@@ -200,19 +213,6 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 <body>
 
 <button class="print-btn" onclick="window.print()">Imprimir / PDF</button>
-
-<div class="cover">
-  <img class="logo" src="data:image/png;base64,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" alt="AWKI">
-  <div class="tag">Estrategia Comercial · RevOps</div>
-  <h1>Playbook Comercial<br>AWKI USA</h1>
-  <p class="subtitle">Sistema comercial de ventas y expansión de cuentas (wholesale B2B) sobre HubSpot Sales Starter — cacao ecuatoriano premium, validación de mercado en Orange County, California.</p>
-  <div class="meta">
-    <div><strong>Alcance</strong>Apollo prospecta · HubSpot califica — Sales | New Business + Account Expansion</div>
-    <div><strong>Mercado inicial</strong>Orange County, California (Newport Beach, Costa Mesa, Irvine, Huntington Beach, Laguna Beach, Dana Point, San Clemente, Tustin, San Juan Capistrano)</div>
-    <div><strong>Referencia</strong>QT-000039</div>
-    <div><strong>Duración de implementación</strong>3 semanas</div>
-  </div>
-</div>
 
 <div class="index-wrap">
   <h2>Índice</h2>
@@ -229,6 +229,20 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <a href="#s10"><span class="n">10</span> KPIs Comerciales</a>
     <a href="#s11"><span class="n">11</span> Roles y Cadencias</a>
     <a href="#s12"><span class="n">12</span> Glosario</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="cover">
+  <img class="logo" src="data:image/png;base64,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" alt="AWKI">
+  <div class="tag">Estrategia Comercial · RevOps</div>
+  <h1>Playbook Comercial<br>AWKI USA</h1>
+  <p class="subtitle">Sistema comercial de ventas y expansión de cuentas (wholesale B2B) sobre HubSpot Sales Starter — cacao ecuatoriano premium, validación de mercado en Orange County, California.</p>
+  <div class="meta">
+    <div><strong>Alcance</strong>Apollo prospecta · HubSpot califica — Sales | New Business + Account Expansion</div>
+    <div><strong>Mercado inicial</strong>Orange County, California (Newport Beach, Costa Mesa, Irvine, Huntington Beach, Laguna Beach, Dana Point, San Clemente, Tustin, San Juan Capistrano)</div>
+    <div><strong>Referencia</strong>QT-000039</div>
+    <div><strong>Duración de implementación</strong>3 semanas</div>
   </div>
 </div>
 
@@ -255,14 +269,15 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <p>AWKI no persigue cualquier cuenta: prioriza segmentos donde el producto tiene aplicación clara y el decisor es identificable. Cuentas sin fit de segmento, sin canal de contacto o sin decisor visible no avanzan a prospección activa.</p>
 
   <h3 class="sub">Tabla 1 — Segmentación ICP</h3>
+  <p class="note" style="margin-top:0;">Los cinco segmentos son mercados igualmente importantes para AWKI USA — no se ordenan por prioridad, sino en el orden operativo de la estrategia.</p>
   <table>
     <thead><tr><th>Segmento</th><th>Sector</th><th>Decisores clave</th><th>Propuesta de valor</th></tr></thead>
     <tbody>
-      <tr><td><strong>Primario</strong></td><td>Retail especializado (natural, gourmet, wellness retail)</td><td>Founder, Buyer, Store Manager</td><td>Portafolio premium y diferenciador más allá del chocolate tradicional</td></tr>
-      <tr><td><strong>Secundario</strong></td><td>Wellness (estudios de yoga, meditación, retiros, spas)</td><td>Studio Owner, Program Director</td><td>Producto para experiencias de conexión, ritual, retiros y talleres</td></tr>
-      <tr><td><strong>Terciario</strong></td><td>Hospitality boutique (cafés especializados, restaurantes premium, lodges)</td><td>GM, F&amp;B Director</td><td>Amenidad, regalo, producto de tienda o experiencia diferenciadora para el huésped</td></tr>
-      <tr><td><strong>Oportunidad 1</strong></td><td>Corporate gifting</td><td>Event Planner, HR Manager</td><td>Regalos con historia, propósito y presentación premium</td></tr>
-      <tr><td><strong>Oportunidad 2</strong></td><td>Aerolíneas premium (hub LAX)</td><td>Procurement Manager</td><td>Amenidad de cabina premium con narrativa de origen</td></tr>
+      <tr><td><strong>Hospitality</strong></td><td>Hospitality boutique (cafés especializados, restaurantes premium, lodges)</td><td>GM, F&amp;B Director</td><td>Amenidad, regalo, producto de tienda o experiencia diferenciadora para el huésped</td></tr>
+      <tr><td><strong>Wellness</strong></td><td>Wellness (estudios de yoga, meditación, retiros, spas)</td><td>Studio Owner, Program Director</td><td>Producto para experiencias de conexión, ritual, retiros y talleres</td></tr>
+      <tr><td><strong>Retail</strong></td><td>Retail especializado (natural, gourmet, wellness retail)</td><td>Founder, Buyer, Store Manager</td><td>Portafolio premium y diferenciador más allá del chocolate tradicional</td></tr>
+      <tr><td><strong>Corporate Gifting</strong></td><td>Corporate gifting</td><td>Event Planner, HR Manager</td><td>Regalos con historia, propósito y presentación premium</td></tr>
+      <tr><td><strong>Airlines</strong></td><td>Aerolíneas premium (hub LAX)</td><td>Procurement Manager</td><td>Amenidad de cabina premium con narrativa de origen</td></tr>
     </tbody>
   </table>
 
@@ -295,9 +310,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Segmento</th><th>Valor de propiedad</th></tr></thead>
     <tbody>
-      <tr><td>Retail especializado</td><td><code>Retail</code></td></tr>
-      <tr><td>Wellness</td><td><code>Wellness</code></td></tr>
       <tr><td>Hospitality boutique</td><td><code>Hospitality</code></td></tr>
+      <tr><td>Wellness</td><td><code>Wellness</code></td></tr>
+      <tr><td>Retail especializado</td><td><code>Retail</code></td></tr>
       <tr><td>Corporate gifting</td><td><code>Corporate Gifting</code></td></tr>
       <tr><td>Aerolíneas premium</td><td><code>Airlines</code></td></tr>
     </tbody>
@@ -1197,6 +1212,28 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <img src="data:image/png;base64,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" alt="AWKI">
   <div>Playbook Comercial · AWKI USA</div>
 </footer>
+</div>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.index-grid a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if(!sections.length || !('IntersectionObserver' in window)) return;
+  var byId = {};
+  links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var link = byId[entry.target.id];
+      if(!link) return;
+      if(entry.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s){ observer.observe(s); });
+})();
+</script>
 
 </body>
 </html>
