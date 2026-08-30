@@ -239,7 +239,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <h1>Playbook Comercial<br>AWKI USA</h1>
   <p class="subtitle">Sistema comercial de ventas y expansión de cuentas (wholesale B2B) sobre HubSpot Sales Starter — cacao ecuatoriano premium, validación de mercado en Orange County, California.</p>
   <div class="meta">
-    <div><strong>Alcance</strong>Apollo prospecta · HubSpot califica — Sales | New Business + Account Expansion</div>
+    <div><strong>Alcance</strong>Apollo prospecta y califica el MQL · HubSpot confirma el SQL y gestiona el Deal — Sales | New Business + Account Expansion</div>
     <div><strong>Mercado inicial</strong>Orange County, California (Newport Beach, Costa Mesa, Irvine, Huntington Beach, Laguna Beach, Dana Point, San Clemente, Tustin, San Juan Capistrano)</div>
     <div><strong>Referencia</strong>QT-000039</div>
     <div><strong>Duración de implementación</strong>3 semanas</div>
@@ -259,7 +259,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <h3 class="sub">Diferenciador comercial</h3>
   <p>Origen ecuatoriano auténtico y verificable, con una historia de propósito y bienestar que ningún chocolate de commodity puede igualar. AWKI no compite por precio de anaquel: compite por experiencia, narrativa y presentación premium.</p>
 
-  <h3 class="sub">Respaldo</h3>
+  <h3 class="sub">Antecedentes Comerciales</h3>
   <p>Marca lanzada en 2025, con ventas 2026 de aproximadamente <strong>USD 9,000</strong>, de las cuales <strong>USD 6,000</strong> provienen de ferias comerciales — validación temprana de aceptación de producto que ahora se sistematiza en un proceso comercial repetible y medible, con meta de <strong>~110 unidades mensuales</strong>.</p>
 </section>
 
@@ -293,7 +293,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
       <tr><td>Decisor identificado</td><td><code>AWKI Decision Maker Identified</code></td><td>15</td></tr>
     </tbody>
   </table>
-  <p class="note">El total se guarda en la propiedad de Empresa <code>AWKI ICP Score</code>. HubSpot Starter no permite lead scoring automático: el comercial suma manualmente los seis criterios al revisar cada Lead. El score es un apoyo a la decisión, nunca la decisión misma — quien decide es el comercial.</p>
+  <p class="note">El total se guarda en la propiedad de Empresa <code>AWKI ICP Score</code>. HubSpot Starter no permite lead scoring automático: el comercial suma manualmente los seis criterios al revisar cada prospecto durante la calificación MQL en Apollo, antes de sincronizarlo a HubSpot. El score es un apoyo a la decisión, nunca la decisión misma — quien decide es el comercial.</p>
 
   <h3 class="sub">Tabla 3 — AWKI ICP Fit (clasificación final, asignación manual)</h3>
   <table>
@@ -304,7 +304,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
       <tr><td><span class="pill">C</span> Incomplete / Medium Fit</td><td>Información incompleta o fit medio</td><td>Completar datos antes de invertir tiempo comercial; no escalar aún</td></tr>
     </tbody>
   </table>
-  <p class="note"><code>AWKI ICP Fit</code> es una propiedad de Empresa con valores A/B/C. HubSpot es la fuente de verdad de esta propiedad — Apollo no la determina ni puede sobrescribirla; se asigna manualmente durante la calificación Lead → MQL (ver sección 03).</p>
+  <p class="note"><code>AWKI ICP Fit</code> es una propiedad de Empresa con valores A/B/C. Se asigna manualmente durante la calificación MQL en Apollo, y queda registrada en HubSpot al sincronizar el registro — HubSpot es la fuente de verdad del valor una vez sincronizado, pero el juicio comercial ocurre en Apollo (ver sección 03).</p>
 
   <h3 class="sub">Tabla 4 — Segmentos principales (propiedad <code>AWKI Segment</code>)</h3>
   <table>
@@ -317,36 +317,36 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
       <tr><td>Aerolíneas premium</td><td><code>Airlines</code></td></tr>
     </tbody>
   </table>
-  <p class="note">Estos cinco valores son los únicos que puede tomar <code>AWKI Segment</code>. El flujo completo de calificación manual — de Lead a MQL a SQL — con sus criterios exactos, está detallado en la sección 03.</p>
+  <p class="note">Estos cinco valores son los únicos que puede tomar <code>AWKI Segment</code>. El flujo completo de calificación manual — de MQL a SQL — con sus criterios exactos, está detallado en la sección 03.</p>
 </section>
 
 <!-- 03 -->
 <section id="s03">
   <div class="sec-head"><span class="num">03</span><h2>Proceso Comercial</h2></div>
-  <p>Arquitectura operativa: <strong>Apollo prospecta, HubSpot califica.</strong> Apollo se usa exclusivamente para encontrar y sincronizar prospectos; toda calificación (MQL, SQL, ICP Fit), gestión de oportunidades y clientes ocurre dentro de HubSpot, que es la única fuente de verdad comercial. AWKI opera dos pipelines de Deals en HubSpot: <strong>Sales | New Business</strong> (cierre del primer pedido) y <strong>Account Expansion</strong> (reventa, upselling y cross-selling sobre cuentas ya cerradas). No se mezclan: una cuenta pasa de New Business a Account Expansion únicamente tras confirmar su primer pedido, y nunca se usa el pipeline de ventas como herramienta de prospección.</p>
+  <p>Arquitectura operativa: <strong>Apollo prospecta y califica el MQL inicial. HubSpot confirma el SQL, gestiona el Deal y es la fuente de verdad de oportunidades y clientes.</strong> Apollo se usa para encontrar prospectos y, mediante revisión manual del comercial, confirmar que cumplen los criterios mínimos del ICP antes de sincronizarlos a HubSpot ya como MQL. A partir de ahí, el primer contacto comercial, el paso a SQL, la creación del Deal y todo el pipeline de ventas ocurren siempre dentro de HubSpot. AWKI opera dos pipelines de Deals en HubSpot: <strong>Sales | New Business</strong> (cierre del primer pedido) y <strong>Account Expansion</strong> (reventa, upselling y cross-selling sobre cuentas ya cerradas). No se mezclan: una cuenta pasa de New Business a Account Expansion únicamente tras confirmar su primer pedido, y nunca se usa el pipeline de ventas como herramienta de prospección.</p>
+
+  <div class="card"><span class="label">Regla operativa</span><strong>Apollo Qualified → MQL → First Contact → Positive Interest → SQL → Create Deal → Sales Pipeline.</strong> No se debe crear un Deal únicamente porque un contacto haya sido cargado, calificado como MQL o contactado. El Deal representa una oportunidad comercial activa, por lo que debe existir como mínimo una respuesta positiva o una manifestación clara de interés por parte del prospecto.</div>
 
   <h3 class="sub">De dónde entra el prospecto (4 canales)</h3>
   <ul>
-    <li><strong>Apollo (outbound):</strong> prospección dirigida por segmento y mercado.</li>
-    <li><strong>Ferias:</strong> venta directa y captura de leads en el momento.</li>
+    <li><strong>Apollo (outbound):</strong> prospección dirigida por segmento y mercado, con calificación MQL manual antes de sincronizar a HubSpot.</li>
+    <li><strong>Ferias:</strong> venta directa y captura de contactos en el momento, con interacción ya iniciada.</li>
     <li><strong>Farmer Markets:</strong> validación de oferta y detección de retailers interesados.</li>
     <li><strong>Inbound / Referral:</strong> solicitudes espontáneas, formularios y referidos.</li>
   </ul>
-  <p>Sin importar el canal, todo contacto nuevo entra a HubSpot con <code>Lifecycle Stage = Lead</code>. Ninguno entra directamente como MQL, SQL u Opportunity.</p>
+  <p>Los prospectos de Apollo entran a HubSpot ya calificados como <code>Lifecycle Stage = MQL</code>, tras la revisión manual descrita en la Fase 1. Los contactos de feria, Farmer Market o inbound/referral, al surgir de una interacción directa, se registran en HubSpot como MQL o directamente como SQL según el nivel de interés confirmado en el momento — ninguno entra directamente como Opportunity.</p>
 
   <h3 class="sub">El flujo completo</h3>
   <div class="flow">
     <div class="flow-step cacao">Apollo — Prospecting</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step light">Prospect</div>
+    <div class="flow-step light">Apollo Qualified</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">HubSpot Lead</div>
+    <div class="flow-step">HubSpot MQL</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step light">Manual ICP Qualification</div>
+    <div class="flow-step light">First Contact</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">MQL</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step light">Manual Sales Qualification</div>
+    <div class="flow-step light">Positive Interest</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step">SQL</div>
     <div class="flow-arrow">↓</div>
@@ -354,7 +354,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <div class="flow-arrow">↓</div>
     <div class="flow-step">Opportunity</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step cacao">Sales | New Business</div>
+    <div class="flow-step cacao">Sales | New Business (AWKI Sales Pipeline)</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step light">Order Confirmed</div>
     <div class="flow-arrow">↓</div>
@@ -366,15 +366,12 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   </div>
 
   <h3 class="sub">Fase 0 — Apollo Prospecting (fuera de HubSpot)</h3>
-  <p>Apollo se utiliza únicamente para: búsqueda de empresas y contactos, filtros ICP para construir listas (ver sección 04), enriquecimiento de datos, obtención de emails y teléfonos, prospección outbound, secuencias de email y SMS/WhatsApp (ver sección 05), y registro de respuestas y actividad de prospección. Apollo puede aplicar filtros ICP para armar las listas iniciales, pero <strong>no determina MQL, no realiza scoring comercial definitivo, no decide el fit final y no crea Deals</strong>. Su única salida hacia HubSpot es sincronizar Company + Contact.</p>
+  <p>Apollo se utiliza para: búsqueda de empresas y contactos, filtros ICP para construir listas (ver sección 04), enriquecimiento de datos, obtención de emails y teléfonos, prospección outbound, secuencias de email y SMS/WhatsApp (ver sección 05), y registro de respuestas y actividad de prospección. La calificación inicial del prospecto (MQL) también se realiza en Apollo, como parte de esta fase — ver Fase 1. Apollo <strong>no decide el SQL, no gestiona el pipeline de Deals y no crea Deals bajo ninguna circunstancia</strong>: esas decisiones ocurren siempre dentro de HubSpot.</p>
 
-  <h3 class="sub">Fase 1 — HubSpot Lead</h3>
-  <p>Cuando Apollo sincroniza una Company y un Contact, HubSpot los recibe con <code>Lifecycle Stage = Lead</code>. Es el mismo punto de entrada para leads de feria, inbound o referral. Ningún contacto entra ya calificado.</p>
+  <h3 class="sub">Fase 1 — Apollo Qualification → MQL</h3>
+  <p>Un contacto puede ser considerado <strong>MQL</strong> cuando la información disponible en Apollo permite confirmar que tanto la empresa como el contacto cumplen los criterios mínimos definidos por AWKI, incluyendo: fit de la empresa con el ICP, tipo de negocio, ubicación, cargo o función del contacto, capacidad potencial de compra, y relevancia comercial para AWKI (ver Tabla 2 y Tabla 3 de la sección 02). El comercial completa manualmente <code>AWKI ICP Score</code> y <code>AWKI ICP Fit</code> con la información de Apollo. Los contactos calificados como MQL se sincronizan a HubSpot con <code>Lifecycle Stage = MQL</code> para iniciar la gestión comercial; los que no cumplen los criterios permanecen sin sincronizar en Apollo, o se descalifican (<code>AWKI Disqualification Reason</code>, ver sección 08).</p>
 
-  <h3 class="sub">Fase 2 — Manual ICP Qualification → MQL</h3>
-  <p>El comercial revisa manualmente el Lead en HubSpot (ver checklist de la sección 09, y la guía de conversación en la sección 07), completa <code>AWKI ICP Score</code> y <code>AWKI ICP Fit</code>, y decide si el contacto pasa a <code>Lifecycle Stage = MQL</code>, permanece como Lead, o se descalifica (<code>AWKI Disqualification Reason</code>, ver sección 08).</p>
-
-  <p>Propiedades de <strong>Company</strong> que la asesora debe revisar y completar para tomar esta decisión:</p>
+  <p>Propiedades de <strong>Company</strong> que la asesora debe revisar y completar en HubSpot al sincronizar el MQL:</p>
   <div class="prop-group">
     <span class="pg-title">AWKI | ICP &amp; Account Qualification</span>
     <table>
@@ -400,8 +397,8 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     </table>
   </div>
 
-  <h3 class="sub">Fase 3 — Manual Sales Qualification → SQL</h3>
-  <p>Un MQL pasa manualmente a SQL cuando el comercial confirma: <code>AWKI Segment</code>, <code>AWKI Market</code>, <code>AWKI ICP Fit</code>, <code>AWKI Clear Application = Yes</code>, <code>AWKI Decision Maker Identified = Yes</code>, y el <code>Contact Decision Level</code> identificado. El criterio central es siempre el mismo: <strong>Fit + Application + Decision Maker</strong>.</p>
+  <h3 class="sub">Fase 2 — First Contact → Positive Interest → SQL</h3>
+  <p>El cambio de MQL a SQL se realiza <strong>manualmente en HubSpot, después del primer contacto comercial</strong> (ver checklist de la sección 09, y la guía de conversación en la sección 07). Un contacto pasa a <code>Lifecycle Stage = SQL</code> cuando: se realizó el primer contacto, el prospecto respondió, y existe interés real en conocer, evaluar o comprar productos AWKI. Una respuesta positiva no requiere necesariamente que exista ya una propuesta formal, pero sí debe existir una señal clara de interés comercial. Si no hay respuesta o el interés no se confirma, el contacto permanece como MQL o se descalifica (<code>AWKI Disqualification Reason</code>, ver sección 08).</p>
 
   <p>Propiedades de <strong>Contact</strong> que sustentan esa confirmación (ver también la calificación del Contact en la sección 07):</p>
   <div class="prop-group">
@@ -426,8 +423,8 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     </table>
   </div>
 
-  <h3 class="sub">Fase 4 — Create Deal → Opportunity</h3>
-  <p>El Deal se crea únicamente cuando el contacto alcanza <code>Lifecycle Stage = SQL</code>. No se crean Deals para todos los contactos que llegan de Apollo, y el pipeline de Deals nunca se usa como herramienta de prospección. Al crear el primer Deal, el Contact y la Company asociados pasan a <code>Lifecycle Stage = Opportunity</code>.</p>
+  <h3 class="sub">Fase 3 — Create Deal → Opportunity</h3>
+  <p>Cuando un MQL se convierte en SQL y existe interés comercial confirmado, se crea un <strong>Deal en HubSpot</strong>. El pipeline de Deals comienza únicamente cuando existe una oportunidad comercial real. Las actividades anteriores — llamadas, emails, intentos de contacto o follow-ups sin respuesta — permanecen registradas en el contacto y no forman parte del pipeline de ventas. No se crean Deals para todos los contactos que llegan de Apollo. Al crear el primer Deal, el Contact y la Company asociados pasan a <code>Lifecycle Stage = Opportunity</code>.</p>
 
   <p>Propiedades de <strong>Deal</strong> a completar desde la creación de la Opportunity:</p>
   <div class="prop-group">
@@ -449,22 +446,21 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     </table>
   </div>
 
-  <h3 class="sub">Fase 5 — Pipeline "Sales | New Business" (7 etapas)</h3>
+  <h3 class="sub">Fase 4 — AWKI Sales Pipeline · "Sales | New Business" (6 etapas)</h3>
   <table>
-    <thead><tr><th>Etapa</th><th>Probabilidad</th><th>Condición de avance</th></tr></thead>
+    <thead><tr><th>Deal Stage</th><th>Probabilidad</th><th>Criterio</th></tr></thead>
     <tbody>
-      <tr><td>SQL Assigned</td><td>15%</td><td>Lifecycle Stage = SQL confirmado manualmente, Deal creado y asignado a comercial</td></tr>
-      <tr><td>Contact &amp; Response</td><td>25%</td><td>Primer contacto registrado y respuesta positiva obtenida</td></tr>
-      <tr><td>Meeting Completed</td><td>45%</td><td>Conversación completada, aplicación, volumen, frecuencia y capacidad logística validadas</td></tr>
-      <tr><td>Starter Order Proposed</td><td>65%</td><td>Selección de producto enviada</td></tr>
-      <tr><td>Negotiation</td><td>80%</td><td>Condiciones en revisión</td></tr>
-      <tr><td>Order Confirmed</td><td>100%</td><td>Orden verificada</td></tr>
-      <tr><td>Closed Lost</td><td>0%</td><td><code>AWKI Lost Reason</code> registrada</td></tr>
+      <tr><td>Interest Confirmed</td><td>25%</td><td>El contacto respondió positivamente y existe interés en conocer o comprar productos AWKI</td></tr>
+      <tr><td>Needs Validated</td><td>45%</td><td>Se validaron aplicación, volumen, frecuencia, timing y capacidad logística</td></tr>
+      <tr><td>Starter Order Proposed</td><td>65%</td><td>Se envió selección de producto, muestra, starter order o propuesta comercial</td></tr>
+      <tr><td>Negotiation</td><td>80%</td><td>Se están revisando precios, cantidades, condiciones comerciales o logística</td></tr>
+      <tr><td>Order Confirmed</td><td>100%</td><td>La primera orden fue confirmada y verificada</td></tr>
+      <tr><td>Closed Lost</td><td>0%</td><td>La oportunidad fue descartada y se registró <code>AWKI Lost Reason</code></td></tr>
     </tbody>
   </table>
-  <p class="note">Al llegar a Order Confirmed / Closed Won, el Contact y la Company pasan a <code>Lifecycle Stage = Customer</code>.</p>
+  <p class="note">El Deal se crea directamente en <strong>Interest Confirmed</strong> (no antes) y avanza desde ahí. Al llegar a Order Confirmed / Closed Won, el Contact y la Company pasan a <code>Lifecycle Stage = Customer</code>.</p>
 
-  <p>Propiedades de <strong>Company</strong> que se completan durante la reunión (etapa Meeting Completed) y el seguimiento posterior, y que luego sostienen el paso a Account Expansion:</p>
+  <p>Propiedades de <strong>Company</strong> que se completan durante la validación de necesidades (etapa Needs Validated) y el seguimiento posterior, y que luego sostienen el paso a Account Expansion:</p>
   <div class="prop-group">
     <span class="pg-title">AWKI | Commercial Potential</span>
     <table>
@@ -498,24 +494,23 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 
   <h3 class="sub">Lifecycle Stages</h3>
   <dl class="glossary">
-    <dt>Lead</dt><dd>Prospecto proveniente de Apollo, feria, inbound, referral u otra fuente que todavía no ha sido calificado.</dd>
-    <dt>Marketing Qualified Lead — MQL</dt><dd>Prospecto que, después de una revisión manual en HubSpot, cumple los criterios mínimos del ICP de AWKI USA: segmento, mercado, relevancia comercial de la empresa, oferta premium, tienda física o comunidad activa, y aplicación potencial de productos AWKI.</dd>
-    <dt>Sales Qualified Lead — SQL</dt><dd>MQL validado manualmente por el comercial que cumple como mínimo: fit comercial, aplicación concreta de AWKI y decisor identificado. Representa el punto en el que ya existe suficiente evidencia para crear una oportunidad.</dd>
+    <dt>Marketing Qualified Lead — MQL</dt><dd>Lifecycle Stage inicial en HubSpot. Se asigna cuando, tras la revisión manual en Apollo, la empresa y el contacto cumplen los criterios mínimos del ICP de AWKI USA: fit de la empresa con el ICP, tipo de negocio, ubicación, cargo o función del contacto, capacidad potencial de compra y relevancia comercial para AWKI. El contacto se sincroniza a HubSpot ya como MQL.</dd>
+    <dt>Sales Qualified Lead — SQL</dt><dd>MQL validado manualmente en HubSpot después del primer contacto comercial: el prospecto respondió y existe una señal clara de interés real. Representa el punto en el que ya existe suficiente evidencia para crear un Deal.</dd>
     <dt>Opportunity</dt><dd>Contacto y empresa asociados a un Deal activo en HubSpot.</dd>
     <dt>Customer</dt><dd>Empresa que confirmó su primer pedido.</dd>
   </dl>
-  <p class="chain">Lifecycle Stage: <b>Lead</b> → <b>MQL</b> → <b>SQL</b> → <b>Opportunity</b> → <b>Customer</b></p>
+  <p class="chain">Lifecycle Stage: <b>MQL</b> → <b>SQL</b> → <b>Opportunity</b> → <b>Customer</b></p>
 
   <div class="card"><span class="label">Principios operativos</span>
     <ul style="margin-bottom:0;">
-      <li>Apollo prospecta. HubSpot califica.</li>
-      <li>Todo prospecto proveniente de Apollo entra inicialmente a HubSpot como Lead.</li>
-      <li>MQL y SQL son decisiones manuales realizadas dentro de HubSpot.</li>
-      <li>No existe un Deal antes de SQL.</li>
+      <li>Apollo prospecta y califica el MQL inicial. HubSpot confirma el SQL y gestiona el Deal.</li>
+      <li>Todo prospecto proveniente de Apollo entra a HubSpot ya calificado como MQL.</li>
+      <li>El paso de MQL a SQL es una decisión manual realizada dentro de HubSpot, después del primer contacto comercial.</li>
+      <li>No existe un Deal antes de SQL, y no se crea solo porque un contacto fue cargado, calificado como MQL o contactado.</li>
       <li>El pipeline de ventas no se utiliza para prospecting.</li>
       <li>Todo Deal abierto debe tener Owner, Next Step, Next Step Date y actividad futura.</li>
       <li>New Business y Account Expansion se administran en pipelines independientes.</li>
-      <li>HubSpot es la fuente de verdad para Lifecycle Stage, ICP Fit, SQL, oportunidades y clientes.</li>
+      <li>HubSpot es la fuente de verdad para SQL, oportunidades y clientes; Apollo es la fuente de verdad para la calificación inicial (MQL).</li>
     </ul>
   </div>
 </section>
@@ -523,7 +518,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 <!-- 04 -->
 <section id="s04">
   <div class="sec-head"><span class="num">04</span><h2>Listas de Apollo</h2></div>
-  <p>Cinco listas de personas en Apollo, una por segmento ICP (ver sección 02), que operacionalizan la Fase 0 — Apollo Prospecting — descrita en la sección 03: aquí se construye el universo de contactos y se aplica el filtro de cargos y empresas. Apollo puede usar estos mismos filtros ICP para priorizar sus listas, pero la calificación comercial definitiva (MQL, SQL, AWKI ICP Fit) se realiza siempre dentro de HubSpot, nunca en Apollo. No se mezclan cargos de distintos segmentos en una sola búsqueda — cada segmento tiene propuesta de valor y secuencia de prospección propia (ver sección 05).</p>
+  <p>Cinco listas de personas en Apollo, una por segmento ICP (ver sección 02), que operacionalizan las Fases 0 y 1 — Apollo Prospecting &amp; Qualification — descritas en la sección 03: aquí se construye el universo de contactos, se aplica el filtro de cargos y empresas, y el comercial confirma manualmente el MQL antes de sincronizar el registro a HubSpot. La confirmación de SQL y la gestión de Deals ocurren siempre dentro de HubSpot, nunca en Apollo. No se mezclan cargos de distintos segmentos en una sola búsqueda — cada segmento tiene propuesta de valor y secuencia de prospección propia (ver sección 05).</p>
 
   <h3 class="sub">Configuración general para todas las listas</h3>
   <table>
@@ -536,28 +531,28 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     </tbody>
   </table>
 
+  <p class="note" style="margin-top:0;">Las cinco listas no tienen prioridad entre sí — todas son igualmente importantes. Solo existe un orden operativo de trabajo: Hospitality, Wellness, Retail, Corporate Gifting, Airlines.</p>
+
   <!-- LISTA 01 -->
   <div class="list-card">
-    <span class="pill cacao prio">Prospección · Prioridad 1 — Principal</span>
-    <h4 class="list-name">01 · Retail | Buyers &amp; Owners</h4>
-    <div class="card"><span class="label">Perfil de empresas objetivo</span>Retailers especializados, tiendas gourmet, tiendas de alimentos naturales, specialty grocery stores, chocolate stores y negocios con productos premium, artesanales o de origen. Empresas con tienda física o canal de venta donde AWKI pueda incorporarse como producto de reventa.</div>
+    <h4 class="list-name">01 · Hospitality | GM &amp; F&amp;B</h4>
+    <div class="card"><span class="label">Perfil de empresas objetivo</span>Hoteles boutique, hoteles de lujo, resorts, lodges, restaurantes premium, cafés especializados y negocios hospitality que busquen diferenciar la experiencia del cliente mediante productos premium con historia y origen.</div>
     <div class="two-col">
       <div>
-        <div class="tier"><span class="tier-label">Tier 1 — Compradores</span>Buyer, Retail Buyer, Food Buyer, Grocery Buyer, Specialty Food Buyer, Specialty Foods Buyer, Category Buyer, Category Manager, Grocery Category Manager, Food Category Manager, Purchasing Manager, Procurement Manager, Merchandise Manager, Merchandising Manager.</div>
-        <div class="tier"><span class="tier-label">Tier 2 — Propietarios</span>Founder, Co-Founder, Owner, Co-Owner, President.</div>
-        <div class="tier"><span class="tier-label">Tier 3 — Gestión de tienda</span>Store Manager, General Manager, Retail Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 1 — Food &amp; Beverage</span>Director of Food and Beverage, Food and Beverage Director, F&amp;B Director, Director of F&amp;B, Food and Beverage Manager, F&amp;B Manager, Beverage Director.</div>
+        <div class="tier"><span class="tier-label">Tier 2 — Dirección</span>General Manager, Hotel General Manager, Managing Director, Hotel Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 3 — Experiencia / Compras</span>Director of Guest Experience, Guest Experience Manager, Director of Operations, Purchasing Manager, Procurement Manager, Retail Manager, Gift Shop Manager.</div>
       </div>
       <div>
-        <div class="tier"><span class="tier-label">Keywords de empresa</span>Gourmet, Specialty Food, Natural Foods, Organic, Wellness, Health Food, Gourmet Market, Specialty Grocery, Chocolate, Cacao, Artisan Food.</div>
-        <div class="tier"><span class="tier-label">Evitar</span>Convenience stores, gas stations, mass-market discount stores, supermercados sin posicionamiento premium, tiendas exclusivamente online sin comunidad o retail físico.</div>
+        <div class="tier"><span class="tier-label">Keywords de empresa</span>Boutique Hotel, Luxury Hotel, Resort, Boutique Resort, Luxury Hospitality, Specialty Cafe, Premium Restaurant, Boutique Lodge, Hotel, Hospitality.</div>
+        <div class="tier"><span class="tier-label">Priorizar</span>Boutique hotels, luxury hotels, resorts, lodges, hoteles con gift shop, hoteles con programas de bienvenida, restaurantes premium, cafés especializados.</div>
       </div>
     </div>
-    <p class="formula">AWKI | OC | Retail | Buyers &amp; Owners</p>
+    <p class="formula">AWKI | OC | Hospitality | GM &amp; F&amp;B</p>
   </div>
 
   <!-- LISTA 02 -->
   <div class="list-card">
-    <span class="pill prio">Prospección · Prioridad 2 — Secundario</span>
     <h4 class="list-name">02 · Wellness | Owners &amp; Program Directors</h4>
     <div class="card"><span class="label">Perfil de empresas objetivo</span>Estudios de yoga, centros de meditación, wellness centers, retreat centers, spas y comunidades enfocadas en bienestar, mindfulness y experiencias holísticas donde AWKI pueda integrarse como producto de ritual, experiencia o comunidad.</div>
     <div class="two-col">
@@ -576,26 +571,24 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 
   <!-- LISTA 03 -->
   <div class="list-card">
-    <span class="pill prio">Prospección · Prioridad 3 — Terciario</span>
-    <h4 class="list-name">03 · Hospitality | GM &amp; F&amp;B</h4>
-    <div class="card"><span class="label">Perfil de empresas objetivo</span>Hoteles boutique, hoteles de lujo, resorts, lodges, restaurantes premium, cafés especializados y negocios hospitality que busquen diferenciar la experiencia del cliente mediante productos premium con historia y origen.</div>
+    <h4 class="list-name">03 · Retail | Buyers &amp; Owners</h4>
+    <div class="card"><span class="label">Perfil de empresas objetivo</span>Retailers especializados, tiendas gourmet, tiendas de alimentos naturales, specialty grocery stores, chocolate stores y negocios con productos premium, artesanales o de origen. Empresas con tienda física o canal de venta donde AWKI pueda incorporarse como producto de reventa.</div>
     <div class="two-col">
       <div>
-        <div class="tier"><span class="tier-label">Tier 1 — Food &amp; Beverage</span>Director of Food and Beverage, Food and Beverage Director, F&amp;B Director, Director of F&amp;B, Food and Beverage Manager, F&amp;B Manager, Beverage Director.</div>
-        <div class="tier"><span class="tier-label">Tier 2 — Dirección</span>General Manager, Hotel General Manager, Managing Director, Hotel Manager.</div>
-        <div class="tier"><span class="tier-label">Tier 3 — Experiencia / Compras</span>Director of Guest Experience, Guest Experience Manager, Director of Operations, Purchasing Manager, Procurement Manager, Retail Manager, Gift Shop Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 1 — Compradores</span>Buyer, Retail Buyer, Food Buyer, Grocery Buyer, Specialty Food Buyer, Specialty Foods Buyer, Category Buyer, Category Manager, Grocery Category Manager, Food Category Manager, Purchasing Manager, Procurement Manager, Merchandise Manager, Merchandising Manager.</div>
+        <div class="tier"><span class="tier-label">Tier 2 — Propietarios</span>Founder, Co-Founder, Owner, Co-Owner, President.</div>
+        <div class="tier"><span class="tier-label">Tier 3 — Gestión de tienda</span>Store Manager, General Manager, Retail Manager.</div>
       </div>
       <div>
-        <div class="tier"><span class="tier-label">Keywords de empresa</span>Boutique Hotel, Luxury Hotel, Resort, Boutique Resort, Luxury Hospitality, Specialty Cafe, Premium Restaurant, Boutique Lodge, Hotel, Hospitality.</div>
-        <div class="tier"><span class="tier-label">Priorizar</span>Boutique hotels, luxury hotels, resorts, lodges, hoteles con gift shop, hoteles con programas de bienvenida, restaurantes premium, cafés especializados.</div>
+        <div class="tier"><span class="tier-label">Keywords de empresa</span>Gourmet, Specialty Food, Natural Foods, Organic, Wellness, Health Food, Gourmet Market, Specialty Grocery, Chocolate, Cacao, Artisan Food.</div>
+        <div class="tier"><span class="tier-label">Evitar</span>Convenience stores, gas stations, mass-market discount stores, supermercados sin posicionamiento premium, tiendas exclusivamente online sin comunidad o retail físico.</div>
       </div>
     </div>
-    <p class="formula">AWKI | OC | Hospitality | GM &amp; F&amp;B</p>
+    <p class="formula">AWKI | OC | Retail | Buyers &amp; Owners</p>
   </div>
 
   <!-- LISTA 04 -->
   <div class="list-card">
-    <span class="pill prio">Prospección · Prioridad 4 — Oportunidad</span>
     <h4 class="list-name">04 · Corporate Gifting | Events &amp; HR</h4>
     <div class="card"><span class="label">Perfil de empresas objetivo</span>Empresas de regalos corporativos, agencias de eventos, agencias de marketing experiencial y compañías con programas de regalos para clientes, empleados o eventos corporativos.</div>
     <div class="two-col">
@@ -614,7 +607,6 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 
   <!-- LISTA 05 -->
   <div class="list-card">
-    <span class="pill prio">Prospección · Prioridad 5 — Oportunidad futura</span>
     <h4 class="list-name">05 · Airlines | Procurement</h4>
     <div class="card"><span class="label">Perfil de empresas objetivo</span>Aerolíneas con operaciones en LAX y empresas relacionadas con experiencia premium del pasajero, catering o servicios de viaje que puedan incorporar AWKI como amenity o producto de experiencia premium.</div>
     <p class="note" style="margin-top:0;">Esta lista se maneja aparte: el ciclo comercial es más largo y el proceso de compra, más corporativo.</p>
@@ -631,15 +623,15 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <p class="formula">AWKI | LAX | Airlines | Procurement</p>
   </div>
 
-  <h3 class="sub">Orden recomendado de prospección</h3>
+  <h3 class="sub">Orden de las listas</h3>
   <table>
-    <thead><tr><th>Prioridad</th><th>Lista</th><th>Por qué</th></tr></thead>
+    <thead><tr><th>Orden</th><th>Lista</th><th>Enfoque</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td><code>AWKI | OC | Retail | Buyers &amp; Owners</code></td><td>ICP principal y aplicación comercial más evidente: reventa directa del producto.</td></tr>
-      <tr><td>2</td><td><code>AWKI | OC | Wellness | Owners &amp; Programs</code></td><td>Muy alineado con la narrativa de cacao, ritual, bienestar, origen y experiencias.</td></tr>
-      <tr><td>3</td><td><code>AWKI | OC | Hospitality | GM &amp; F&amp;B</code></td><td>Buen potencial para amenities, gift shop, welcome gifts, experiencias y consumo F&amp;B.</td></tr>
-      <tr><td>4</td><td><code>AWKI | OC | Corporate Gifting | Events &amp; HR</code></td><td>Puede producir pedidos de mayor volumen, aunque con más estacionalidad.</td></tr>
-      <tr><td>5</td><td><code>AWKI | LAX | Airlines | Procurement</code></td><td>Prospección selectiva, no fuente principal de volumen inicial.</td></tr>
+      <tr><td>1</td><td><code>AWKI | OC | Hospitality | GM &amp; F&amp;B</code></td><td>Amenities, gift shop, welcome gifts, experiencias y consumo F&amp;B.</td></tr>
+      <tr><td>2</td><td><code>AWKI | OC | Wellness | Owners &amp; Programs</code></td><td>Narrativa de cacao, ritual, bienestar, origen y experiencias.</td></tr>
+      <tr><td>3</td><td><code>AWKI | OC | Retail | Buyers &amp; Owners</code></td><td>Aplicación comercial de reventa directa del producto.</td></tr>
+      <tr><td>4</td><td><code>AWKI | OC | Corporate Gifting | Events &amp; HR</code></td><td>Pedidos de mayor volumen, con estacionalidad.</td></tr>
+      <tr><td>5</td><td><code>AWKI | LAX | Airlines | Procurement</code></td><td>Prospección selectiva, ciclo comercial más largo.</td></tr>
     </tbody>
   </table>
 
@@ -647,9 +639,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Categoría</th><th>Tags</th></tr></thead>
     <tbody>
-      <tr><td>Segmento</td><td><ul class="taglist"><li><code>AWKI_Retail</code></li><li><code>AWKI_Wellness</code></li><li><code>AWKI_Hospitality</code></li><li><code>AWKI_Gifting</code></li><li><code>AWKI_Airlines</code></li></ul></td></tr>
+      <tr><td>Segmento</td><td><ul class="taglist"><li><code>AWKI_Hospitality</code></li><li><code>AWKI_Wellness</code></li><li><code>AWKI_Retail</code></li><li><code>AWKI_Gifting</code></li><li><code>AWKI_Airlines</code></li></ul></td></tr>
       <tr><td>Rol</td><td><ul class="taglist"><li><code>Decision_Maker</code></li><li><code>Influencer</code></li><li><code>Procurement</code></li><li><code>Owner</code></li><li><code>Operations</code></li></ul></td></tr>
-      <tr><td>Prioridad</td><td><ul class="taglist"><li><code>ICP_A</code></li><li><code>ICP_B</code></li><li><code>ICP_C</code></li></ul></td></tr>
+      <tr><td>ICP Fit</td><td><ul class="taglist"><li><code>ICP_A</code></li><li><code>ICP_B</code></li><li><code>ICP_C</code></li></ul></td></tr>
       <tr><td>Mercado</td><td><ul class="taglist"><li><code>Los_Angeles</code></li><li><code>LAX</code></li></ul></td></tr>
     </tbody>
   </table>
@@ -657,9 +649,9 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <h3 class="sub">Estructura final</h3>
   <p>En Apollo se debe terminar inicialmente con estas cinco listas:</p>
   <ol>
-    <li><code>AWKI | OC | Retail | Buyers &amp; Owners</code></li>
-    <li><code>AWKI | OC | Wellness | Owners &amp; Programs</code></li>
     <li><code>AWKI | OC | Hospitality | GM &amp; F&amp;B</code></li>
+    <li><code>AWKI | OC | Wellness | Owners &amp; Programs</code></li>
+    <li><code>AWKI | OC | Retail | Buyers &amp; Owners</code></li>
     <li><code>AWKI | OC | Corporate Gifting | Events &amp; HR</code></li>
     <li><code>AWKI | LAX | Airlines | Procurement</code></li>
   </ol>
@@ -668,13 +660,15 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <div class="flow">
     <div class="flow-step cacao">Apollo</div>
     <div class="flow-arrow">↓</div>
+    <div class="flow-step light">Manual MQL Qualification</div>
+    <div class="flow-arrow">↓</div>
     <div class="flow-step light">Company + Contact</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step">HubSpot</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step light">Lifecycle Stage = Lead</div>
+    <div class="flow-step light">Lifecycle Stage = MQL</div>
   </div>
-  <p>Los contactos provenientes de Apollo entran a HubSpot siempre como <code>Lead</code>. Nunca automáticamente como MQL, SQL u Opportunity, y Apollo no crea Deals bajo ninguna circunstancia.</p>
+  <p>Los contactos provenientes de Apollo entran a HubSpot ya calificados como <code>MQL</code>, después de la revisión manual descrita en la sección 03. Nunca entran directamente como SQL u Opportunity — ese paso sigue siendo siempre manual dentro de HubSpot, después del primer contacto — y Apollo no crea Deals bajo ninguna circunstancia.</p>
   <div class="two-col">
     <div>
       <div class="tier"><span class="tier-label">Apollo sincroniza — Company</span>Company Name, Website, Industry, Location, Number of employees, Apollo List, Source.</div>
@@ -684,13 +678,13 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     </div>
   </div>
 
-  <div class="card"><span class="label">Principio rector</span>No se mezclan cargos de distintos segmentos en una sola búsqueda de Apollo: cada segmento tiene propuesta de valor y secuencia de email/SMS-WhatsApp diferente (sección 05). Apollo no determina MQL, SQL ni scoring comercial definitivo, y no crea Deals: solo prospecta y sincroniza Company + Contact hacia HubSpot como Lead.</div>
+  <div class="card"><span class="label">Principio rector</span>No se mezclan cargos de distintos segmentos en una sola búsqueda de Apollo: cada segmento tiene propuesta de valor y secuencia de email/SMS-WhatsApp diferente (sección 05). Apollo prospecta y califica manualmente el MQL inicial; no decide el SQL, no realiza scoring automático y no crea Deals — esas decisiones ocurren siempre dentro de HubSpot.</div>
 </section>
 
 <!-- 05 -->
 <section id="s05" class="alt">
   <div class="sec-head"><span class="num">05</span><h2>Secuencias de Prospección</h2></div>
-  <p>Secuencias completas por segmento ICP, en dos canales diferenciados: <strong>email</strong> (4 touches, Día 0 a Día 14) y <strong>SMS / WhatsApp</strong> (3 touches, Día 1 a Día 10), corriendo en paralelo y sin pisarse. Ambas corren en Apollo durante la Fase 0 de Prospecting (ver sección 03), antes de que el contacto se sincronice a HubSpot como Lead y pase por la calificación manual Lead → MQL → SQL.</p>
+  <p>Secuencias completas por segmento ICP, en dos canales diferenciados: <strong>email</strong> (4 touches, Día 0 a Día 14) y <strong>SMS / WhatsApp</strong> (3 touches, Día 1 a Día 10), corriendo en paralelo y sin pisarse. Ambas corren en Apollo durante las Fases 0 y 1 de Prospecting &amp; Qualification (ver sección 03), antes de que el contacto sea calificado como MQL y sincronizado a HubSpot, donde pasa por la calificación manual MQL → SQL tras el primer contacto.</p>
   <p class="note">SMS/WhatsApp solo se activa sobre contactos con número válido y consentimiento comercial registrado (propiedad de Contacto). Es un canal de refuerzo, más breve y directo que el email — nunca reemplaza la explicación completa de la propuesta de valor.</p>
 
   <!-- RETAIL -->
@@ -768,7 +762,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 <!-- 06 -->
 <section id="s06">
   <div class="sec-head"><span class="num">06</span><h2>Reunión Comercial y Modalidades de Pedido</h2></div>
-  <p>La reunión comercial (15 minutos) es lo que hace avanzar el Deal a la etapa <code>Meeting Completed</code> del pipeline Sales | New Business. Confirma tres datos antes de proponer: aplicación real del producto en el negocio del prospecto, volumen estimado de consumo o reventa, y capacidad logística de recepción.</p>
+  <p>La reunión comercial (15 minutos) es lo que hace avanzar el Deal a la etapa <code>Needs Validated</code> del pipeline Sales | New Business (AWKI Sales Pipeline). Confirma tres datos antes de proponer: aplicación real del producto en el negocio del prospecto, volumen estimado de consumo o reventa, y capacidad logística de recepción.</p>
 
   <h3 class="sub">La reunión releva tres datos</h3>
   <ol>
@@ -795,7 +789,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 <!-- 07 -->
 <section id="s07">
   <div class="sec-head"><span class="num">07</span><h2>Guía de Reunión Comercial de 15 Minutos</h2></div>
-  <p>Manual práctico para la asesora comercial cuando tiene una primera reunión agendada con un prospecto proveniente de Apollo. Se mantiene la lógica general del playbook: <strong>Apollo prospecta, HubSpot califica</strong>, la calificación es siempre manual, y los objetos Company y Contact se evalúan por separado. Esta guía todavía no se mezcla con las etapas del pipeline de Deals (sección 03/09) — su objetivo es completar o validar el <code>AWKI ICP Score</code>, el <code>AWKI ICP Fit</code> (Company Fit) y la calificación del Contact que, más adelante, permiten decidir manualmente el paso de MQL a SQL.</p>
+  <p>Manual práctico para la asesora comercial cuando tiene una primera reunión o llamada agendada con un prospecto que Apollo ya calificó como MQL. Se mantiene la lógica general del playbook: la calificación es siempre manual, y los objetos Company y Contact se evalúan por separado. Esta reunión es, en la práctica, el <strong>primer contacto comercial</strong>: su resultado determina si existe interés real y el contacto puede pasar manualmente de MQL a SQL (ver sección 03). Esta guía todavía no se mezcla con las etapas del pipeline de Deals (sección 03/09) — su objetivo es refinar o confirmar el <code>AWKI ICP Score</code> y el <code>AWKI ICP Fit</code> (Company Fit) que Apollo dejó registrados al calificar el MQL, y calificar al Contact para sustentar la decisión de SQL.</p>
 
   <div class="card"><span class="label">Principio de la reunión</span>No convertir la primera reunión en un interrogatorio de calificación. El prospecto aceptó la reunión porque quiere entender qué es AWKI USA y qué productos ofrece — la conversación debe comenzar dando contexto y generando interés.</div>
   <p class="chain">La lógica de los 15 minutos: <b>Presentar brevemente</b> → <b>descubrir</b> → <b>calificar</b> → <b>presentar valor relevante</b> → <b>acordar siguiente paso</b>.</p>
@@ -810,7 +804,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <li>Explicar qué tipo de chocolates/productos comercializa.</li>
     <li>Comunicar en términos simples la propuesta de valor.</li>
   </ul>
-  <div class="email-tpl"><div class="step">Ejemplo de pitch inicial (30–45 segundos)</div><div class="body">"Hola {{nombre}}, gracias por el tiempo. Te cuento brevemente quiénes somos: AWKI es una marca de cacao ecuatoriano premium — trabajamos chocolate y productos de cacao con origen auténtico, pensados para ir más allá del chocolate tradicional: retail especializado, experiencias de bienestar, hospitality y regalos corporativos, dependiendo del negocio. Antes de mostrarte producto, me encantaría entender un poco mejor tu negocio para enfocarme en lo que realmente te sirve — ¿te parece?"</div></div>
+  <div class="email-tpl"><div class="step">Ejemplo de pitch inicial (30–45 segundos)</div><div class="body">"Hi {{nombre}}, thanks for the time. Let me tell you briefly who we are: AWKI is a premium Ecuadorian cacao brand — we work with chocolate and cacao products with authentic origin, built to go beyond traditional chocolate: specialty retail, wellness experiences, hospitality, and corporate gifting, depending on the business. Before showing you product, I'd love to understand your business a bit better so I can focus on what's actually useful to you — does that work?"</div></div>
 
   <h3 class="sub"><span class="time-badge">Minutos 2–7</span><br>2 · Descubrimiento y calificación de la Company</h3>
   <p><strong>Objetivo:</strong> entender el negocio y validar la información necesaria para determinar si la empresa corresponde al ICP de AWKI USA. La conversación debe sentirse natural, no un cuestionario.</p>
@@ -908,7 +902,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <div class="qa"><div class="q">Motivo de pérdida a vigilar</div><div class="a">"Precio" aparece con frecuencia como motivo declarado, pero en la mayoría de los casos encubre falta de fit real de segmento o ausencia de decisor confirmado. Todo Closed Lost debe registrar <code>AWKI Lost Reason</code> con el motivo específico para distinguir precio real de fit débil (lista completa en la sección 09).</div></div>
 
   <h3 class="sub">Razones de descalificación (antes de crear un Deal)</h3>
-  <p>No confundir con <code>AWKI Lost Reason</code>: <code>AWKI Disqualification Reason</code> se usa antes de que exista un Deal, durante la revisión manual de un Lead o MQL en HubSpot.</p>
+  <p>No confundir con <code>AWKI Lost Reason</code>: <code>AWKI Disqualification Reason</code> se usa antes de que exista un Deal, ya sea durante la calificación MQL en Apollo o durante el seguimiento hacia SQL en HubSpot.</p>
   <ul class="taglist">
     <li><code>Outside Target Market</code></li>
     <li><code>Wrong Segment</code></li>
@@ -926,18 +920,17 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 <!-- 09 -->
 <section id="s09">
   <div class="sec-head"><span class="num">09</span><h2>HubSpot</h2></div>
-  <p>HubSpot Sales Hub Starter es el CRM central y la única fuente de verdad comercial: repositorio de contactos y empresas, sistema de calificación manual, y sistema para crear y administrar Deals, ventas, clientes, recompra, upselling y cross-selling. Apollo nunca escribe directamente un Lifecycle Stage distinto de Lead, ni crea Deals.</p>
+  <p>HubSpot Sales Hub Starter es el CRM central y la fuente de verdad para SQL en adelante: repositorio de contactos y empresas, sistema de confirmación manual de SQL, y sistema para crear y administrar Deals, ventas, clientes, recompra, upselling y cross-selling. Apollo determina manualmente el MQL inicial, pero nunca decide el SQL ni crea Deals — esas decisiones ocurren siempre dentro de HubSpot.</p>
 
   <h3 class="sub">Pipelines (máximo 2, límite de Starter)</h3>
-  <p><strong>Sales | New Business</strong> (7 etapas, ver sección 03 — solo entran Deals creados a partir de un SQL confirmado manualmente) y <strong>Account Expansion</strong> (7 etapas, gestionado por separado para reventa, upselling y cross-selling en cuentas con primer pedido confirmado).</p>
+  <p><strong>Sales | New Business</strong> — también llamado <strong>AWKI Sales Pipeline</strong> (6 etapas, ver sección 03 — solo entran Deals creados a partir de un SQL confirmado manualmente tras el primer contacto) y <strong>Account Expansion</strong> (7 etapas, gestionado por separado para reventa, upselling y cross-selling en cuentas con primer pedido confirmado).</p>
 
-  <h3 class="sub">Checklist por etapa — Sales | New Business</h3>
+  <h3 class="sub">Checklist por etapa — Sales | New Business (AWKI Sales Pipeline)</h3>
   <table>
-    <thead><tr><th>Etapa</th><th>Debe registrar</th></tr></thead>
+    <thead><tr><th>Deal Stage</th><th>Debe registrar</th></tr></thead>
     <tbody>
-      <tr><td>SQL Assigned</td><td>Company asociada, Contact asociado, <code>AWKI Segment</code>, <code>AWKI ICP Fit</code>, <code>AWKI Acquisition Channel</code>, <code>AWKI Next Step</code>, <code>AWKI Next Step Date</code></td></tr>
-      <tr><td>Contact &amp; Response</td><td>Respuesta, <code>AWKI Last Outcome</code>, <code>AWKI Next Step</code>, <code>AWKI Next Step Date</code></td></tr>
-      <tr><td>Meeting Completed</td><td><code>AWKI Application</code>, <code>AWKI Expected Frequency</code>, <code>AWKI Purchase Capacity</code>, Estimated Quantity, Next Step</td></tr>
+      <tr><td>Interest Confirmed</td><td>Company asociada, Contact asociado, <code>AWKI Segment</code>, <code>AWKI ICP Fit</code>, <code>AWKI Acquisition Channel</code>, <code>AWKI Last Outcome</code>, <code>AWKI Next Step</code>, <code>AWKI Next Step Date</code></td></tr>
+      <tr><td>Needs Validated</td><td><code>AWKI Application</code>, <code>AWKI Expected Frequency</code>, <code>AWKI Purchase Capacity</code>, Estimated Quantity, Next Step</td></tr>
       <tr><td>Starter Order Proposed</td><td>Product / Line Items, Quantity, Amount, Proposal Date, Next Step, Next Step Date</td></tr>
       <tr><td>Negotiation</td><td><code>AWKI Objection</code>, Amount, Expected Close Date, Next Step, Next Step Date</td></tr>
       <tr><td>Order Confirmed</td><td>Amount, Products, Quantity, Close Date</td></tr>
@@ -1035,12 +1028,11 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Vista</th><th>Filtro</th></tr></thead>
     <tbody>
-      <tr><td>01 · New Apollo Prospects</td><td><code>Acquisition Channel = Apollo</code>, <code>Lifecycle Stage = Lead</code></td></tr>
-      <tr><td>02 · Qualification Pending</td><td><code>Lifecycle Stage = Lead</code>, <code>AWKI ICP Fit</code> desconocido o incompleto</td></tr>
-      <tr><td>03 · MQL</td><td><code>Lifecycle Stage = MQL</code></td></tr>
-      <tr><td>04 · SQL</td><td><code>Lifecycle Stage = SQL</code></td></tr>
-      <tr><td>05 · Nurture</td><td><code>AWKI ICP Fit = B</code>, sin Deal activo</td></tr>
-      <tr><td>06 · Disqualified</td><td><code>AWKI Disqualification Reason</code> conocido</td></tr>
+      <tr><td>01 · New MQL (sin contacto)</td><td><code>Lifecycle Stage = MQL</code>, sin primer contacto registrado</td></tr>
+      <tr><td>02 · MQL — En seguimiento</td><td><code>Lifecycle Stage = MQL</code>, primer contacto registrado, esperando respuesta</td></tr>
+      <tr><td>03 · SQL</td><td><code>Lifecycle Stage = SQL</code></td></tr>
+      <tr><td>04 · Nurture</td><td><code>AWKI ICP Fit = B</code>, sin Deal activo</td></tr>
+      <tr><td>05 · Disqualified</td><td><code>AWKI Disqualification Reason</code> conocido</td></tr>
     </tbody>
   </table>
 
@@ -1051,7 +1043,7 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 
   <h3 class="sub">Vistas de New Business</h3>
   <ul class="taglist">
-    <li><code>Open Deals</code></li><li><code>No Next Activity</code></li><li><code>SQL Assigned</code></li><li><code>Meetings</code></li><li><code>Starter Orders Proposed</code></li><li><code>Negotiations</code></li><li><code>Expected Closings</code></li><li><code>Closed Won</code></li><li><code>Closed Lost</code></li>
+    <li><code>Open Deals</code></li><li><code>No Next Activity</code></li><li><code>Interest Confirmed</code></li><li><code>Needs Validated</code></li><li><code>Starter Orders Proposed</code></li><li><code>Negotiations</code></li><li><code>Expected Closings</code></li><li><code>Closed Won</code></li><li><code>Closed Lost</code></li>
   </ul>
 
   <h3 class="sub">Vistas de Account Expansion</h3>
@@ -1071,9 +1063,8 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Etapa que dispara</th><th>Tarea creada</th></tr></thead>
     <tbody>
-      <tr><td>SQL Assigned</td><td>First commercial follow-up</td></tr>
-      <tr><td>Contact &amp; Response</td><td>Schedule commercial meeting</td></tr>
-      <tr><td>Meeting Completed</td><td>Prepare Starter Order</td></tr>
+      <tr><td>Interest Confirmed</td><td>Schedule commercial meeting</td></tr>
+      <tr><td>Needs Validated</td><td>Prepare Starter Order</td></tr>
       <tr><td>Starter Order Proposed</td><td>Proposal follow-up</td></tr>
       <tr><td>Negotiation</td><td>Negotiation follow-up</td></tr>
       <tr><td>Order Confirmed</td><td>Create Account Expansion Deal</td></tr>
@@ -1096,12 +1087,11 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
     <tbody>
       <tr><td>Apollo Prospects (empresas)</td><td>150–200</td></tr>
       <tr><td>Apollo Prospects (contactos válidos)</td><td>200–300</td></tr>
-      <tr><td>HubSpot Leads sincronizados</td><td>150–250</td></tr>
-      <tr><td>MQL (calificación manual)</td><td>60–100</td></tr>
-      <tr><td>SQL (calificación manual)</td><td>20–30</td></tr>
-      <tr><td>Opportunities (Deals creados)</td><td>15–25</td></tr>
-      <tr><td>Meetings</td><td>6–10</td></tr>
-      <tr><td>Starter Orders Proposed</td><td>4–7</td></tr>
+      <tr><td>MQL confirmados en Apollo (sincronizados a HubSpot)</td><td>150–250</td></tr>
+      <tr><td>SQL (primer contacto + interés confirmado, en HubSpot)</td><td>60–100</td></tr>
+      <tr><td>Opportunities (Deals creados)</td><td>20–30</td></tr>
+      <tr><td>Needs Validated (reunión/llamada de descubrimiento)</td><td>15–25</td></tr>
+      <tr><td>Starter Orders Proposed</td><td>6–10</td></tr>
       <tr><td>Customers (Closed Won)</td><td>2–5</td></tr>
     </tbody>
   </table>
@@ -1111,11 +1101,11 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Conversión</th><th>Qué revela</th></tr></thead>
     <tbody>
-      <tr><td>Lead → MQL</td><td>Calidad de la prospección de Apollo y disciplina de revisión manual del comercial</td></tr>
-      <tr><td>MQL → SQL</td><td>Qué tan bien se confirma fit, aplicación y decisor antes de crear el Deal</td></tr>
+      <tr><td>Apollo Prospect → MQL</td><td>Calidad de la prospección de Apollo y disciplina de la calificación manual del comercial</td></tr>
+      <tr><td>MQL → SQL</td><td>Qué tan bien se ejecuta el primer contacto y se confirma un interés real antes de crear el Deal</td></tr>
       <tr><td>SQL → Opportunity</td><td>Si todo SQL efectivamente se convierte en Deal, sin cuellos de botella</td></tr>
-      <tr><td>Opportunity → Meeting</td><td>Efectividad del primer contacto y agendamiento</td></tr>
-      <tr><td>Meeting → Starter Order Proposed</td><td>Calidad de la reunión para llevar a propuesta</td></tr>
+      <tr><td>Opportunity → Needs Validated</td><td>Efectividad de la validación de necesidades tras crear el Deal</td></tr>
+      <tr><td>Needs Validated → Starter Order Proposed</td><td>Calidad de la validación para llevar a propuesta</td></tr>
       <tr><td>Starter Order Proposed → Customer</td><td>Efectividad de cierre de la primera venta</td></tr>
       <tr><td>Customer → Reorder</td><td>Salud de la cuenta en Account Expansion</td></tr>
     </tbody>
@@ -1125,11 +1115,11 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Métrica</th><th>Qué revela</th></tr></thead>
     <tbody>
-      <tr><td>Tasa MQL → SQL (calificación manual en HubSpot)</td><td>Qué tan bien el comercial confirma los MQL antes de crear el Deal — ya no depende de Apollo</td></tr>
-      <tr><td>AWKI ICP Fit promedio (A/B/C) de cuentas activas</td><td>Si la prospección respeta el ICP o se está diluyendo</td></tr>
+      <tr><td>Tasa MQL → SQL (calificación manual en HubSpot)</td><td>Qué tan bien el comercial ejecuta el primer contacto y confirma interés real sobre los MQL que llegan ya calificados desde Apollo</td></tr>
+      <tr><td>AWKI ICP Fit promedio (A/B/C) de cuentas activas</td><td>Si la calificación MQL en Apollo respeta el ICP o se está diluyendo</td></tr>
       <tr><td>% de cuentas ICP A en pipeline</td><td>Concentración de esfuerzo en cuentas de alto potencial</td></tr>
       <tr><td>Mix de canal (Apollo / Feria / Farmer Market / Inbound)</td><td>Qué canal está aportando mejores cuentas, no solo más volumen</td></tr>
-      <tr><td>Ranking de AWKI Disqualification Reason</td><td>Por qué se pierden Leads/MQL antes de llegar a Deal</td></tr>
+      <tr><td>Ranking de AWKI Disqualification Reason</td><td>Por qué se pierden MQL antes de llegar a SQL/Deal</td></tr>
       <tr><td>Ranking de AWKI Lost Reason</td><td>Si "Price" encubre fit débil o falta de decisor</td></tr>
     </tbody>
   </table>
@@ -1148,8 +1138,8 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
 
   <h3 class="sub">Dashboard — tres áreas</h3>
   <div class="two-col">
-    <div class="tier"><span class="tier-label">Prospecting &amp; Qualification</span>New Apollo Leads, Leads Pending Qualification, MQLs, SQLs, Lead → MQL, MQL → SQL, ICP A/B/C, Disqualification Reasons.</div>
-    <div class="tier"><span class="tier-label">New Business</span>Open Deals, Deals by Stage, Pipeline Amount, Meetings, Starter Orders Proposed, Won Deals, Lost Deals, Lost Reasons.</div>
+    <div class="tier"><span class="tier-label">Prospecting &amp; Qualification</span>New Apollo Prospects, MQL Confirmed (Apollo), Pending First Contact, SQLs, MQL → SQL, ICP A/B/C, Disqualification Reasons.</div>
+    <div class="tier"><span class="tier-label">New Business</span>Open Deals, Deals by Stage, Pipeline Amount, Needs Validated, Starter Orders Proposed, Won Deals, Lost Deals, Lost Reasons.</div>
   </div>
   <div class="tier"><span class="tier-label">Account Expansion</span>Active Customers, Reorders Due, Reorders, Upsells, Cross-sells, Expansion Pipeline, Accounts at Risk.</div>
   <p class="note">Diseñado dentro de las limitaciones de reporting de HubSpot Sales Hub Starter: ningún reporte de este dashboard requiere el Custom Report Builder de Professional.</p>
@@ -1162,17 +1152,17 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <table>
     <thead><tr><th>Rol</th><th>Responsabilidad</th></tr></thead>
     <tbody>
-      <tr><td>Comercial asignado</td><td>Ejecuta la calificación manual Lead → MQL → SQL en HubSpot, crea el Deal solo tras confirmar SQL, prospección activa en Apollo, seguimiento de tareas, registro de actividades, próximo paso siempre definido</td></tr>
+      <tr><td>Comercial asignado</td><td>Ejecuta la calificación manual MQL en Apollo y, tras el primer contacto, la confirmación de SQL en HubSpot; crea el Deal solo tras confirmar SQL, prospección activa en Apollo, seguimiento de tareas, registro de actividades, próximo paso siempre definido</td></tr>
       <tr><td>Responsable de Account Expansion</td><td>Seguimiento de reposición, detección de oportunidades de upsell/cross-sell, gestión de cuentas en riesgo</td></tr>
-      <tr><td>Responsable de ferias / Farmer Markets</td><td>Captura de leads en el evento, registro inmediato en HubSpot como Lead con canal de origen</td></tr>
+      <tr><td>Responsable de ferias / Farmer Markets</td><td>Captura de contactos en el evento, registro inmediato en HubSpot como MQL o SQL según el nivel de interés confirmado en el momento, con canal de origen registrado</td></tr>
       <tr><td>Gerencia</td><td>Aprueba condiciones de pedido por volumen y excepciones de precio antes de enviarse al prospecto</td></tr>
-      <tr><td>Dirección comercial</td><td>Revisión de pipeline, KPIs y calidad de cartera; ajusta listas de Apollo y prioridades de segmento; es garante de que HubSpot siga siendo la única fuente de verdad para Lifecycle Stage, ICP Fit, SQL, oportunidades y clientes</td></tr>
+      <tr><td>Dirección comercial</td><td>Revisión de pipeline, KPIs y calidad de cartera; ajusta listas de Apollo y prioridades de segmento; es garante de que la calificación MQL en Apollo respete los criterios del ICP y de que HubSpot siga siendo la única fuente de verdad para SQL, oportunidades y clientes</td></tr>
     </tbody>
   </table>
 
   <h3 class="sub">Cadencia diaria</h3>
-  <p class="chain">New Apollo Leads → Qualification Pending → Complete ICP criteria → Set ICP Fit → Lead → MQL → Review MQL → MQL → SQL → Create Deal → Manage tasks → Update pipeline → Maintain Next Step + Next Step Date.</p>
-  <p>En la práctica: revisar tareas vencidas, ejecutar seguimientos, registrar llamadas y correos, actualizar oportunidades, definir próximo paso, crear tareas nuevas, revisar Leads nuevos sincronizados desde Apollo.</p>
+  <p class="chain">New Apollo Prospects → Apollo Qualification → Set ICP Score/Fit → MQL → Sync to HubSpot → First Contact → Positive Interest → SQL → Create Deal → Manage tasks → Update pipeline → Maintain Next Step + Next Step Date.</p>
+  <p>En la práctica: revisar tareas vencidas, ejecutar seguimientos, registrar llamadas y correos, actualizar oportunidades, definir próximo paso, crear tareas nuevas, revisar MQL nuevos sincronizados desde Apollo.</p>
 
   <h3 class="sub">Cadencia semanal</h3>
   <p>Prospectos contactados, respuestas, reuniones, propuestas, ganados y perdidos, razones de pérdida, negocios estancados, próximos cierres, estado de recompra, calidad de datos.</p>
@@ -1186,22 +1176,22 @@ footer img{height:46px;margin-bottom:14px;opacity:.95;filter:invert(1);}
   <div class="sec-head"><span class="num">12</span><h2>Glosario</h2></div>
   <dl class="glossary">
     <dt>ICP (Ideal Customer Profile)</dt><dd>Perfil de cliente ideal definido por segmento, mercado, aplicación y decisor.</dd>
-    <dt>Lead</dt><dd>Prospecto proveniente de Apollo, feria, inbound, referral u otra fuente que todavía no ha sido calificado. Es el Lifecycle Stage inicial de todo contacto en HubSpot, sin excepción.</dd>
-    <dt>MQL (Marketing Qualified Lead)</dt><dd>Lead que, después de una revisión manual en HubSpot, cumple los criterios mínimos del ICP de AWKI USA. La calificación es siempre manual — Apollo no determina el MQL.</dd>
-    <dt>SQL (Sales Qualified Lead)</dt><dd>MQL validado manualmente por el comercial, que confirma fit comercial, aplicación concreta de AWKI y decisor identificado. Es el único punto en el que existe suficiente evidencia para crear un Deal.</dd>
-    <dt>Lifecycle Stage</dt><dd>Propiedad de HubSpot que marca en qué punto del proceso está un Contact/Company: Lead → MQL → SQL → Opportunity → Customer.</dd>
+    <dt>Apollo Qualified</dt><dd>Estado interno en Apollo, previo a sincronizar a HubSpot: el comercial revisó manualmente la Company y el Contact y confirmó los criterios mínimos del ICP. No es un Lifecycle Stage de HubSpot.</dd>
+    <dt>MQL (Marketing Qualified Lead)</dt><dd>Lifecycle Stage inicial en HubSpot. Se asigna cuando, tras la revisión manual en Apollo, la empresa y el contacto cumplen los criterios mínimos del ICP de AWKI USA (fit, tipo de negocio, ubicación, cargo o función del contacto, capacidad potencial de compra y relevancia comercial). El contacto se sincroniza a HubSpot ya como MQL — no existe una etapa previa de Lead.</dd>
+    <dt>SQL (Sales Qualified Lead)</dt><dd>MQL validado manualmente en HubSpot después del primer contacto comercial: el prospecto respondió y existe una señal clara de interés real en conocer, evaluar o comprar productos AWKI. Es el único punto en el que existe suficiente evidencia para crear un Deal.</dd>
+    <dt>Lifecycle Stage</dt><dd>Propiedad de HubSpot que marca en qué punto del proceso está un Contact/Company: MQL → SQL → Opportunity → Customer.</dd>
     <dt>Opportunity</dt><dd>Contacto y empresa asociados a un Deal activo en HubSpot; se alcanza al crear el primer Deal, siempre después de confirmar SQL.</dd>
     <dt>Customer</dt><dd>Empresa que confirmó su primer pedido (Order Confirmed / Closed Won); Lifecycle Stage posterior a Opportunity.</dd>
-    <dt>AWKI ICP Score</dt><dd>Puntaje de 0 a 80 calculado manualmente en HubSpot con seis criterios (segmento, mercado, productos premium, tienda/comunidad, aplicación clara, decisor identificado). Apoya la decisión de MQL/SQL, no la reemplaza.</dd>
-    <dt>AWKI ICP Fit (A/B/C)</dt><dd>Propiedad de Empresa asignada manualmente en HubSpot: A — High Fit, B — Good Fit / Lower Immediate Intent, C — Incomplete / Medium Fit. HubSpot es la fuente de verdad; Apollo no puede sobrescribirla.</dd>
-    <dt>AWKI Disqualification Reason</dt><dd>Motivo por el que un Lead o MQL se descalifica antes de crear un Deal (Outside Target Market, Wrong Segment, No Decision Maker, etc.). No debe confundirse con AWKI Lost Reason.</dd>
+    <dt>AWKI ICP Score</dt><dd>Puntaje de 0 a 80 calculado manualmente durante la calificación MQL en Apollo, con seis criterios (segmento, mercado, productos premium, tienda/comunidad, aplicación clara, decisor identificado), y registrado en HubSpot al sincronizar el MQL. Apoya la decisión de MQL/SQL, no la reemplaza.</dd>
+    <dt>AWKI ICP Fit (A/B/C)</dt><dd>Propiedad de Empresa asignada manualmente durante la calificación MQL en Apollo y registrada en HubSpot: A — High Fit, B — Good Fit / Lower Immediate Intent, C — Incomplete / Medium Fit.</dd>
+    <dt>AWKI Disqualification Reason</dt><dd>Motivo por el que un prospecto se descalifica antes de crear un Deal — durante la calificación MQL en Apollo o durante el seguimiento hacia SQL en HubSpot (Outside Target Market, Wrong Segment, No Decision Maker, etc.). No debe confundirse con AWKI Lost Reason.</dd>
     <dt>AWKI Lost Reason</dt><dd>Motivo de un Deal en Closed Lost dentro de un pipeline ya abierto (Price, No Product Fit, MOQ, etc.). Se registra siempre después de que existió un Deal.</dd>
     <dt>Starter order</dt><dd>Primer pedido de prueba, mínimo reducido, que define si una cuenta pasa de Sales | New Business a Account Expansion.</dd>
-    <dt>Sales | New Business</dt><dd>Pipeline de 7 etapas para cerrar el primer pedido de una cuenta nueva; arranca en "SQL Assigned" — nunca antes, y nunca se usa para prospectar.</dd>
+    <dt>Sales | New Business (AWKI Sales Pipeline)</dt><dd>Pipeline de 6 etapas para cerrar el primer pedido de una cuenta nueva; arranca en "Interest Confirmed" tras confirmar el SQL y crear el Deal — nunca antes, y nunca se usa para prospectar.</dd>
     <dt>Account Expansion</dt><dd>Pipeline de 7 etapas que agrupa reventa (reposición), upselling y cross-selling, y rastrea el riesgo de inactividad en cuentas con primer pedido confirmado (Customer).</dd>
     <dt>Canal de origen (AWKI Acquisition Channel)</dt><dd>Apollo, Feria, Farmer Market o Inbound/Referral; obligatorio en toda oportunidad.</dd>
     <dt>Cuenta en riesgo</dt><dd>Cuenta activa en Account Expansion con reposición vencida o caída de frecuencia de compra.</dd>
-    <dt>BANT adaptado</dt><dd>Criterio de calificación comercial que se confirma durante la etapa "Meeting Completed" del pipeline Sales | New Business, posterior a la confirmación de SQL.</dd>
+    <dt>BANT adaptado</dt><dd>Criterio de calificación comercial que se confirma durante la etapa "Needs Validated" del pipeline Sales | New Business, posterior a la confirmación de SQL.</dd>
     <dt>Decisor identificado</dt><dd>Contacto con cargo y nivel de decisión confirmado dentro de la cuenta (AWKI Decision Maker Identified = Yes).</dd>
     <dt>Nomenclatura de negocios</dt><dd>Formato estándar {Company} – {Segment} – {Order Type} para identificar negocios en HubSpot.</dd>
     <dt>Mercado prioritario</dt><dd>Orange County, California (Newport Beach, Costa Mesa, Irvine, Huntington Beach, Laguna Beach, Dana Point, San Clemente, Tustin, San Juan Capistrano), en la fase inicial de validación; la expansión geográfica solo procede tras validar conversión, ticket, recurrencia y capacidad logística.</dd>
